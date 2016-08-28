@@ -6,7 +6,6 @@ then
     git commit -m "Register user profile ${2}."
 elif [ $1 == "update" ] 
 then
-    echo "Test"
     git commit -m "Update user profile ${2}."
 fi
 git push origin master
