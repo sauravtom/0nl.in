@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AAAAAAMAAAAZAAAAJgAAACMAAAATAAAAAf///wD///8A////AP///wD///8A////AP///wD///8AAAAAAQAAADUMQ4CBFofy/xia9v8YlvX/FoDu+AMdPWAAAAAl////AP///wD///8A////AP///wD///8AAAAAAwMXM1oaofj/Icn+/yPW/v8k2v7/JNn+/yPQ/v8gv/z/GI70/wAABED///8A////AP///wD///8A////AAUlSGAdsfv/JNj+/yTd/v8k4P7/IuD+/yPg/v8k3f7/JNr+/yPP/v8anvj/AAAANv///wD///8A////AAAAACcbofj/Is3+/yLX/v8m5f7/D0l5/w9Qh/8PTIT/I4ij/yHX/v8i0/7/IcX+/xiI8/8AAAAJ////AP///wASaN3XILv+/yHH/v8i2v7/Ci1S/yTs//8h2P7/Idz+/yTl//8BDTX/H8f+/yDE/v8er/v/ABEiPP///wB/f38CGI/z/yG+/v8gv/7/IMj8/yDJ/P8hz/7/IdH+/yHP/v8hzv7/H8f8/x/D+/8gv/7/ILj+/xN06vj///8AAAAABRyc+P8ou/7/EC47/ysrK/8qKir/E0pd/yjF/v8ow/r/DRES/yoqKv8qKir/H42+/yi6/v8YhPH/AAAAAQAAAAQfn/j/Lrr3/xoaGv8mJib/JiYm/xISEv8vvfn/Fkpe/yAgIP8mJib/JiYm/xMTE/8wu/n/GIfz/wAAAAF/f38BG5P1/w4ODv8pKSn/Kysr/yQkJP8YGBj/Dw8P/w0NDf8lJSX/Kioq/yQkJP8XFxf/HXGY/xV17v7///8A////ABNt6vcMDAz/EhIS/xEREf8dIiT/K01a/2DR/v9awur/KDxD/xkcHv8TExP/CQkJ/w8PD/8NUbc5////AP///wAAAAAFH574/4HZ/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4rd/v8YivT/AAAAAv///wD///8A////ABFd4ZIlqfv/oOL+/6Hk/v+h5P7/oeT+/6Hk/v+h5P7/oeT+/6Pi/v8cmff/AAAAA////wD///8A////AP///wD///8AEl/mjxeW9//G7P//vuv//77r//++6///v+z//7nn//8ZjvT/ElvIDv///wD///8A////AP///wD///8A////AP///wD///8AEmnr5BeG8v8Wj/f/Fo73/xeB8P4SX+ar////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAPg/AADwDwAA4AcAAMADAACAAwAAgAEAAIABAACAAQAAgAEAAIADAADAAwAAwAcAAOAPAAD4HwAA//8AAA==" rel="icon" type="image/x-icon" />
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AAAAAAMAAAAZAAAAJgAAACMAAAATAAAAAf///wD///8A////AP///wD///8A////AP///wD///8AAAAAAQAAADUMQ4CBFofy/xia9v8YlvX/FoDu+AMdPWAAAAAl////AP///wD///8A////AP///wD///8AAAAAAwMXM1oaofj/Icn+/yPW/v8k2v7/JNn+/yPQ/v8gv/z/GI70/wAABED///8A////AP///wD///8A////AAUlSGAdsfv/JNj+/yTd/v8k4P7/IuD+/yPg/v8k3f7/JNr+/yPP/v8anvj/AAAANv///wD///8A////AAAAACcbofj/Is3+/yLX/v8m5f7/D0l5/w9Qh/8PTIT/I4ij/yHX/v8i0/7/IcX+/xiI8/8AAAAJ////AP///wASaN3XILv+/yHH/v8i2v7/Ci1S/yTs//8h2P7/Idz+/yTl//8BDTX/H8f+/yDE/v8er/v/ABEiPP///wB/f38CGI/z/yG+/v8gv/7/IMj8/yDJ/P8hz/7/IdH+/yHP/v8hzv7/H8f8/x/D+/8gv/7/ILj+/xN06vj///8AAAAABRyc+P8ou/7/EC47/ysrK/8qKir/E0pd/yjF/v8ow/r/DRES/yoqKv8qKir/H42+/yi6/v8YhPH/AAAAAQAAAAQfn/j/Lrr3/xoaGv8mJib/JiYm/xISEv8vvfn/Fkpe/yAgIP8mJib/JiYm/xMTE/8wu/n/GIfz/wAAAAF/f38BG5P1/w4ODv8pKSn/Kysr/yQkJP8YGBj/Dw8P/w0NDf8lJSX/Kioq/yQkJP8XFxf/HXGY/xV17v7///8A////ABNt6vcMDAz/EhIS/xEREf8dIiT/K01a/2DR/v9awur/KDxD/xkcHv8TExP/CQkJ/w8PD/8NUbc5////AP///wAAAAAFH574/4HZ/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4rd/v8YivT/AAAAAv///wD///8A////ABFd4ZIlqfv/oOL+/6Hk/v+h5P7/oeT+/6Hk/v+h5P7/oeT+/6Pi/v8cmff/AAAAA////wD///8A////AP///wD///8AEl/mjxeW9//G7P//vuv//77r//++6///v+z//7nn//8ZjvT/ElvIDv///wD///8A////AP///wD///8A////AP///wD///8AEmnr5BeG8v8Wj/f/Fo73/xeB8P4SX+ar////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAPg/AADwDwAA4AcAAMADAACAAwAAgAEAAIABAACAAQAAgAEAAIADAADAAwAAwAcAAOAPAAD4HwAA//8AAA==" rel="icon" type="image/x-icon">
 
     <title>Shikhar Chauhan 😎</title>
 
@@ -18,15 +16,15 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
     
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
   <body>
 
@@ -58,7 +56,7 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 
 
 					<ul class="nav nav-tabs nav-stacked" id="myTab">
-					  <li class="active"><a href="#about">About</a></li>
+					  <li class="active"><a href="#about">About</a></li><li class=""><a href="#portfolio">meList</a></li>
 					  <!-- <li><a href="#portfolio">Projects</a></li> -->
 					  <!-- <li><a href="#profile">Profile</a></li>
 					  <li><a href="#portfolio">Videos</a></li>
@@ -102,7 +100,7 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 							  
 							  <div class="col-xs-6">
 								  <p class="sm">
-								  	<i class="icon-phone"></i> - +91 ********** <br/>
+								  	<i class="icon-phone"></i> - +91 ********** <br>
 									<!-- <i class="icon-skype"></i> - <a href="skype:sauravtomar?call" target='_blank'>'sauravtomar'</a> -->  
 								  </p>
 							  </div><!-- col-xs-6 -->
@@ -113,21 +111,36 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 						  <div class="row">
 							  <div class="col-xs-6">
 								  <p class="sm">
-								  	<i class="icon-facebook"></i> - <a href="https://www.facebook.com/xsschauhan" target='_blank'>Facebook</a> <br/>
-									<i class="icon-linkedin"></i> - <a href='https://www.linkedin.com/in/shikhar-chauhan-a4ba199b'>LinkedIn</a> 
+								  	<i class="icon-facebook"></i> - <a href="https://www.facebook.com/xsschauhan" target="_blank">Facebook</a> <br>
+									<i class="icon-linkedin"></i> - <a href="https://www.linkedin.com/in/shikhar-chauhan-a4ba199b">LinkedIn</a> 
 								  </p>
 							  </div><!-- col-xs-6 -->
 							  
 							  <div class="col-xs-6">
 								  <p class="sm">
-								  	<i class="icon-github"></i> - <a href="https://github.com/xssChauhan" target='_blank'> github</a> <br/>
-									<i class="icon-instagram"></i> - <a href="https://www.instagram.com/xsschauhan/" target='_blank'> twitter</a>  
+								  	<i class="icon-github"></i> - <a href="https://github.com/xssChauhan" target="_blank"> github</a> <br>
+									<i class="icon-instagram"></i> - <a href="https://www.instagram.com/xsschauhan/" target="_blank"> twitter</a>  
 								  </p>
 							  </div><!-- col-xs-6 -->
 						  </div><!-- row -->
 					  </div><!-- Tab Contact -->
 					  
-					</div><!-- Tab Content -->
+					<div class="tab-pane" id="portfolio"><div class="col-xs-12 centered">
+	<blockquote class="twitter-tweet" data-lang="en">
+		<a href="https:/www.twitter.com/Pocket/status/728259170412040192"></a> 
+	</blockquote>
+</div><!-- col-xs-6 -->
+<hr><div class="col-xs-12 centered">
+	<blockquote class="twitter-tweet" data-lang="en">
+		<a href="https:/www.twitter.com/ShikharChauhan7/status/769894682109349888"></a> 
+	</blockquote>
+</div><!-- col-xs-6 -->
+<hr><div class="col-xs-12 centered">
+	<blockquote class="twitter-tweet" data-lang="en">
+		<a href="https:/www.twitter.com/ShikharChauhan7/status/765650042552217600"></a> 
+	</blockquote>
+</div><!-- col-xs-6 -->
+<hr></div></div><!-- Tab Content -->
     			</div><!-- col-md-8 -->
     		</div><!-- row w -->
     	</div><!-- col-lg-6 -->
@@ -154,7 +167,29 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 	      });
 	  });
 
-	</script>    
+	</script> 
+	<script>
+	if(typeof process == "undefined"){
+		console.log("Twitter Widget");
+	    window.twttr = (function(d, s, id) {
+	        var js, fjs = d.getElementsByTagName(s)[0],
+	            t = window.twttr || {};
+	        if (d.getElementById(id)) return t;
+	        js = d.createElement(s);
+	        js.id = id;
+	        js.src = "https://platform.twitter.com/widgets.js";
+	        fjs.parentNode.insertBefore(js, fjs);
+
+	        t._e = [];
+	        t.ready = function(f) {
+	            t._e.push(f);
+	        };
+
+	        return t;
+	    }(document, "script", "twitter-wjs"));
+	}
+</script>
     
-  </body>
-</html>
+  
+
+</body>
