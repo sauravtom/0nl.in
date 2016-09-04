@@ -152,8 +152,7 @@ class Controller(object):
                 self.create_yaml("app.yaml", data) # create and write app.yaml
 
                 # Navigate to the directory containing the shell script i.e. `/static/profiles/`
-                shell_dir = os.path.dirname(os.path.dirname(os.getcwd()))
-                os.chdir(shell_dir)
+                os.chdir(BASE_DIR)
 
                 # Commit changes to github using the shell script
                 # Passing the 'add' argument to commit update message
@@ -251,8 +250,7 @@ class Controller(object):
             Profile.objects.filter(id=profile.id).update(**yaml_data)
 
             # Navigate to the directory containing the shell script i.e. `/static/profiles/`
-            shell_dir = os.path.dirname(os.path.dirname(os.getcwd()))
-            os.chdir(shell_dir)
+            os.chdir(BASE_DIR)
 
             # Commit changes to github using the shell script
             # Passing the 'update' argument to commit update message
