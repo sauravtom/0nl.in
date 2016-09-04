@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AAAAAAMAAAAZAAAAJgAAACMAAAATAAAAAf///wD///8A////AP///wD///8A////AP///wD///8AAAAAAQAAADUMQ4CBFofy/xia9v8YlvX/FoDu+AMdPWAAAAAl////AP///wD///8A////AP///wD///8AAAAAAwMXM1oaofj/Icn+/yPW/v8k2v7/JNn+/yPQ/v8gv/z/GI70/wAABED///8A////AP///wD///8A////AAUlSGAdsfv/JNj+/yTd/v8k4P7/IuD+/yPg/v8k3f7/JNr+/yPP/v8anvj/AAAANv///wD///8A////AAAAACcbofj/Is3+/yLX/v8m5f7/D0l5/w9Qh/8PTIT/I4ij/yHX/v8i0/7/IcX+/xiI8/8AAAAJ////AP///wASaN3XILv+/yHH/v8i2v7/Ci1S/yTs//8h2P7/Idz+/yTl//8BDTX/H8f+/yDE/v8er/v/ABEiPP///wB/f38CGI/z/yG+/v8gv/7/IMj8/yDJ/P8hz/7/IdH+/yHP/v8hzv7/H8f8/x/D+/8gv/7/ILj+/xN06vj///8AAAAABRyc+P8ou/7/EC47/ysrK/8qKir/E0pd/yjF/v8ow/r/DRES/yoqKv8qKir/H42+/yi6/v8YhPH/AAAAAQAAAAQfn/j/Lrr3/xoaGv8mJib/JiYm/xISEv8vvfn/Fkpe/yAgIP8mJib/JiYm/xMTE/8wu/n/GIfz/wAAAAF/f38BG5P1/w4ODv8pKSn/Kysr/yQkJP8YGBj/Dw8P/w0NDf8lJSX/Kioq/yQkJP8XFxf/HXGY/xV17v7///8A////ABNt6vcMDAz/EhIS/xEREf8dIiT/K01a/2DR/v9awur/KDxD/xkcHv8TExP/CQkJ/w8PD/8NUbc5////AP///wAAAAAFH574/4HZ/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4rd/v8YivT/AAAAAv///wD///8A////ABFd4ZIlqfv/oOL+/6Hk/v+h5P7/oeT+/6Hk/v+h5P7/oeT+/6Pi/v8cmff/AAAAA////wD///8A////AP///wD///8AEl/mjxeW9//G7P//vuv//77r//++6///v+z//7nn//8ZjvT/ElvIDv///wD///8A////AP///wD///8A////AP///wD///8AEmnr5BeG8v8Wj/f/Fo73/xeB8P4SX+ar////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAPg/AADwDwAA4AcAAMADAACAAwAAgAEAAIABAACAAQAAgAEAAIADAADAAwAAwAcAAOAPAAD4HwAA//8AAA==" rel="icon" type="image/x-icon" />
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AAAAAAMAAAAZAAAAJgAAACMAAAATAAAAAf///wD///8A////AP///wD///8A////AP///wD///8AAAAAAQAAADUMQ4CBFofy/xia9v8YlvX/FoDu+AMdPWAAAAAl////AP///wD///8A////AP///wD///8AAAAAAwMXM1oaofj/Icn+/yPW/v8k2v7/JNn+/yPQ/v8gv/z/GI70/wAABED///8A////AP///wD///8A////AAUlSGAdsfv/JNj+/yTd/v8k4P7/IuD+/yPg/v8k3f7/JNr+/yPP/v8anvj/AAAANv///wD///8A////AAAAACcbofj/Is3+/yLX/v8m5f7/D0l5/w9Qh/8PTIT/I4ij/yHX/v8i0/7/IcX+/xiI8/8AAAAJ////AP///wASaN3XILv+/yHH/v8i2v7/Ci1S/yTs//8h2P7/Idz+/yTl//8BDTX/H8f+/yDE/v8er/v/ABEiPP///wB/f38CGI/z/yG+/v8gv/7/IMj8/yDJ/P8hz/7/IdH+/yHP/v8hzv7/H8f8/x/D+/8gv/7/ILj+/xN06vj///8AAAAABRyc+P8ou/7/EC47/ysrK/8qKir/E0pd/yjF/v8ow/r/DRES/yoqKv8qKir/H42+/yi6/v8YhPH/AAAAAQAAAAQfn/j/Lrr3/xoaGv8mJib/JiYm/xISEv8vvfn/Fkpe/yAgIP8mJib/JiYm/xMTE/8wu/n/GIfz/wAAAAF/f38BG5P1/w4ODv8pKSn/Kysr/yQkJP8YGBj/Dw8P/w0NDf8lJSX/Kioq/yQkJP8XFxf/HXGY/xV17v7///8A////ABNt6vcMDAz/EhIS/xEREf8dIiT/K01a/2DR/v9awur/KDxD/xkcHv8TExP/CQkJ/w8PD/8NUbc5////AP///wAAAAAFH574/4HZ/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4rd/v8YivT/AAAAAv///wD///8A////ABFd4ZIlqfv/oOL+/6Hk/v+h5P7/oeT+/6Hk/v+h5P7/oeT+/6Pi/v8cmff/AAAAA////wD///8A////AP///wD///8AEl/mjxeW9//G7P//vuv//77r//++6///v+z//7nn//8ZjvT/ElvIDv///wD///8A////AP///wD///8A////AP///wD///8AEmnr5BeG8v8Wj/f/Fo73/xeB8P4SX+ar////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAPg/AADwDwAA4AcAAMADAACAAwAAgAEAAIABAACAAQAAgAEAAIADAADAAwAAwAcAAOAPAAD4HwAA//8AAA==" rel="icon" type="image/x-icon">
 
     <title>Saurav Tomar 😎</title>
 
@@ -18,8 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
     
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -67,8 +65,8 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 	    			
 	    			  <!-- ===== First Tab ===== -->
 					  <div class="tab-pane active" id="about">
-					  	<h1 class='cursive glam name'>Saurav Tomar</h1>
-					  	<h5 class='typing'></h5>
+					  	<h1 class="cursive glam name">Saurav Tomar</h1>
+					  	<h5 class="typing"></h5>
 					  	<hr>
 					  	<p>From Zero to One to Infinity and Beyond <br> 
 					  	0  👉 1 👉 ∞ 👉 ॐ  🚀</p> 
@@ -76,10 +74,10 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 					  	<h4>Who am I ?</h4>
 					  	<p>A college dropout connecting the dots forward.</p>
 
-					  	<p>I am on an entrepreneurship roller coaster ride, building and selling businesses <!-- (read complete story here #todo) --> since the age of 12. These days I am helping people build beautiful websites by chatting with a bot @<a href='http://0nl.in' target='_blank'>0nl.in/e</a></p>
+					  	<p>I am on an entrepreneurship roller coaster ride, building and selling businesses <!-- (read complete story here #todo) --> since the age of 12. These days I am helping people build beautiful websites by chatting with a bot @<a href="http://0nl.in" target="_blank">0nl.in/e</a></p>
 					  	
 					  	<h4>Let's stay in touch ?</h4>
-					  	<p>Add me on <a href="https://www.snapchat.com/add/sauravtom" target='_blank'>Snapchat</a>. Cheers 🍹</p>
+					  	<p>Add me on <a href="https://www.snapchat.com/add/sauravtom" target="_blank">Snapchat</a>. Cheers 🍹</p>
 
 					  	<h4>Coffee ?</h4>
 					  	<p>Click 👉  <a href="https://twitter.com/sauravtom">☕</a>️</p>
@@ -98,54 +96,13 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 
 						  <h4><i class="icon-trophy"></i> My Blog posts</h4>
 					  	<p class="sm">
-					  		<grey>How to hire the best talent for your startup</grey> | After working for more than ... (click to read)<br/><br>
-					  		<grey>Thoughts on AR VR and mixed reality</grey> | <br/>
+					  		<grey>How to hire the best talent for your startup</grey> | After working for more than ... (click to read)<br><br>
+					  		<grey>Thoughts on AR VR and mixed reality</grey> | <br>
 					  	</p>
 					  </div><!-- Tab Profile -->
 					  
 	    			  <!-- ===== Third Tab ===== -->
-					  <div class="tab-pane" id="portfolio">
-						  <div class="row">
-							  <div class="col-xs-12 centered">
-							  			
-							  			<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Sentiments: Mobile first, Swipe and Emoji based feedback tool via <a href="https://twitter.com/_jacksmith">@_jacksmith</a> on <a href="https://twitter.com/ProductHunt">@ProductHunt</a> <a href="https://t.co/PIjb9rnvN7">https://t.co/PIjb9rnvN7</a></p>&mdash; Saurav Tomar  (@sauravtom) <a href="https://twitter.com/sauravtom/status/758281581236776960">July 27, 2016</a></blockquote>
-							  			<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-							  </div><!-- col-xs-6 -->
-							  <hr>
-							  <div class="col-xs-12 centered">
-							  			
-							  			<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fkunalb11%2Fposts%2F10210109830520197" width="author" height="186" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-							  			
-
-							  </div><!-- col-xs-6 -->
-							  <hr>
-
-							  <div class="col-xs-12 centered">
-							  			
-							  			<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Ouch! Brutal, on Rocket Internet &amp; India!<br>&quot;Rocket Internet Corporate Governance discount.&quot;  <a href="https://t.co/vbrlTRjlV1">https://t.co/vbrlTRjlV1</a> <a href="https://t.co/gwaWxCGRFD">pic.twitter.com/gwaWxCGRFD</a></p>&mdash; Subrahmanyam KVJ (@SuB8u) <a href="https://twitter.com/SuB8u/status/758256942162870272">July 27, 2016</a></blockquote>
-							  
-
-							  </div><!-- col-xs-6 -->
-							  <hr>
-							  
-							  <div class="col-xs-12 centered">
-							  			
-							  			<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="und" dir="ltr">😍 <a href="https://t.co/bXtLzRQgp3">https://t.co/bXtLzRQgp3</a></p>&mdash; Saurav Tomar  (@sauravtom) <a href="https://twitter.com/sauravtom/status/755651264042659840">July 20, 2016</a></blockquote>
-							  			
-
-							  </div><!-- col-xs-6 -->
-
-							  
-							  <hr>
-							  
-
-
-						  </div><!-- row -->
-						  
-						  
-
-					  </div><!-- /Tab Portfolio -->
+					  <div class="tab-pane" id="portfolio"></div><!-- /Tab Portfolio -->
 					  
 	    			  <!-- ===== Fourth Tab ===== -->
 					  <div class="tab-pane" id="contact">
@@ -154,15 +111,15 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 						  <div class="row">
 							  <div class="col-xs-6">
 								  <p class="sm">
-								  	<i class="icon-globe"></i> - sauravtom.com <br/>
+								  	<i class="icon-globe"></i> - sauravtom.com <br>
 									<i class="icon-envelope"></i> - saurav@newsmeme.in  
 								  </p>
 							  </div><!-- col-xs-6 -->
 							  
 							  <div class="col-xs-6">
 								  <p class="sm">
-								  	<i class="icon-phone"></i> - +91 8447789937 <br/>
-									<i class="icon-skype"></i> - <a href="skype:sauravtomar?call" target='_blank'>'sauravtomar'</a>  
+								  	<i class="icon-phone"></i> - +91 8447789937 <br>
+									<i class="icon-skype"></i> - <a href="skype:sauravtomar?call" target="_blank">'sauravtomar'</a>  
 								  </p>
 							  </div><!-- col-xs-6 -->
 						  </div><!-- row -->
@@ -172,15 +129,15 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 						  <div class="row">
 							  <div class="col-xs-6">
 								  <p class="sm">
-								  	<i class="icon-facebook"></i> - <a href="https://fb.com/one.saurav.tomar" target='_blank'> one.saurav.tomar</a> <br/>
-									<i class="icon-linkedin"></i> - <a href="http://www.linkedin.com/in/sauravtom" target='_blank'>sauravtom</a> 
+								  	<i class="icon-facebook"></i> - <a href="https://fb.com/one.saurav.tomar" target="_blank"> one.saurav.tomar</a> <br>
+									<i class="icon-linkedin"></i> - <a href="http://www.linkedin.com/in/sauravtom" target="_blank">sauravtom</a> 
 								  </p>
 							  </div><!-- col-xs-6 -->
 							  
 							  <div class="col-xs-6">
 								  <p class="sm">
-								  	<i class="icon-github"></i> - <a href="https://github.com/sauravtom" target='_blank'> sauravtom</a> <br/>
-									<i class="icon-twitter"></i> - <a href="https://twitter.com/sauravtom" target='_blank'> @sauravtom</a>  
+								  	<i class="icon-github"></i> - <a href="https://github.com/sauravtom" target="_blank"> sauravtom</a> <br>
+									<i class="icon-twitter"></i> - <a href="https://twitter.com/sauravtom" target="_blank"> @sauravtom</a>  
 								  </p>
 							  </div><!-- col-xs-6 -->
 						  </div><!-- row -->
@@ -215,5 +172,6 @@ Add this as well https://www.thinkwithgoogle.com/search/#?platforms=Video&locale
 
 	</script>    
     
-  </body>
-</html>
+  
+
+</body>
