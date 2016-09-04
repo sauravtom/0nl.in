@@ -1,6 +1,7 @@
 #!/bin/bash
 
-git add --all
+# Add profile pages only
+git add static/profiles/e/*
 if [ $1 == "add" ]
 then
     git commit -m "Register user profile ${2}."
