@@ -1,0 +1,145 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Edit Form{% endblock %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="header text-center">0nl Form</h1>
+<div class="row">
+
+     <div class="col-md-8 col-md-offset-2 alert-conatiner">
+
+        {% if errors %}
+        <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <h5>Errors</h5>
+            <ul class="alert-text">
+
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+                
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if success %}
+        <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            Your profile has been successfully edited.
+        </div>
+        {% endif %}
+     </div>
+
+</div> <!-- /.row -->
+
+<div class="row">
+    <form method="POST" action="" class="col-md-8 col-md-offset-2" id="form-container">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>First name</label>
+                <input type="text" class="form-control custom-input" name="firstname" value="{{first_name}}">
+            </div>
+            <div class="col-md-6">
+                <label>Last name</label>
+                <input type="text" class="form-control custom-input" name="lastname" value="{{last_name}}">
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>Username</label>
+                <input type="text" class="form-control custom-input" name="username" value="{{username}}" disabled>
+            </div>
+            <div class="col-md-6">
+                <label>Email</label>
+                <input type="email" class="form-control custom-input" name="email" value="{{email}}" disabled>
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>Skype id</label>
+                <input type="text" class="form-control custom-input" name="skype_id" value="{{skype_id}}">
+            </div>
+            <div class="col-md-6">
+                <label>Phone</label>
+                <input type="number" class="form-control custom-input" name="phone" value="{{phone}}">
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>About</label>
+                <textarea class="form-control custom-input" name="about">{{about}}</textarea>
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Github URL</label>
+                <input type="text" class="form-control custom-input" name="github_url" value="{{github_url}}">
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Facebook URL</label>
+                <input type="text" class="form-control custom-input" name="facebook_url" value="{{facebook_url}}">
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Twitter URL</label>
+                <input type="text" class="form-control custom-input" name="twiiter_url" value="{{twiiter_url}}">
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Linkedin URL</label>
+                <input type="text" class="form-control custom-input" name="linkedin_url" value="{{linkedin_url}}">
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Select a template</label>
+                <select name="template" class="form-control custom-input" value="{{template}}">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <br>
+                <h6>Preview:</h6>
+                <a href="{% url 'template1' %}" target="_blank">Template1</a>, <a href="{% url 'template2' %}" target="_blank">Template2</a>, <a href="{% url 'template3' %}" target="_blank">Template3</a>
+            </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <button class="btn btn-success" name="register">Save</button>
+            </div>
+        </div><!-- /.row -->
+
+    </form><!-- /.form -->
+
+</div><!-- /.row -->
+{% endblock %}
+
+{% block extrascripts %}
+<script type="text/javascript">
+    var $formContainer = $("#form-container");
+    var success = {{ success|yesno:"true,false" }};
+    console.log(success);
+
+    if (success === true) {
+        $formContainer.hide();
+    }
+</script>
+{% endblock %}

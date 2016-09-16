@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Name 😎</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+        body {
+            background: #F3F3F3;
+        }
+        header {
+            padding: 30px 0;
+            background: #FAFAFA;
+            border-bottom: 1px solid #D3D3D3;
+        }
+        .profile-pic {
+            max-height: 115px;
+        }
+        .common-block {
+            background: #FAFAFA;
+            border: 1px solid #D3D3D3;
+            border-radius: 4px;
+            padding: 20px 30px;
+        }
+        .common-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .main-row {
+            margin-top: 50px;
+        }
+        .nav-tabs > li.active > a, 
+        .nav-tabs > li.active > a:focus, 
+        .nav-tabs > li.active > a:hover {
+            color: #fff;
+            cursor: default;
+            background-color: #ee6768;
+            border: none;
+            border-bottom-color: transparent;
+            box-shadow: #ee6768 6px 0px 0px 0px;
+        }
+        .nav-tabs > li > a:hover {
+            background: #ee6768;
+            cursor: pointer;
+        }
+        .nav-tabs {
+            border-bottom: none;
+        }
+        .nav-tabs > li > .custom-tab {
+            background: #ee6768;
+            border: 0;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 18px;
+            border-radius: 4px 4px 4px 4px;
+            box-shadow: #BE4B4C 6px 0px 0px 0px;
+        }
+        .nav-tabs > li > .custom-tab:active, 
+        .nav-tabs > li > .custom-tab.active {
+            color: #fafafa;
+            background: #ee6768;
+            box-shadow: #ee6768 6px 0px 0px 0px;
+        }
+        .left-side-bar {
+            padding: 15px 40px;
+            margin-bottom: 15px;
+        }
+        .fa.pull-right {
+            font-size: 25px;
+        }
+        input[type="search"] {
+            border-radius: 17px;
+        }
+        .btn-custom {
+            font-size: 0.85em;
+            background: #ee6768;
+            color: #fff;
+            text-transform: none;
+            height: 28px;
+            width: auto;
+            padding: 5px 15px 6px 15px;
+            -webkit-box-shadow: #BE4B4C 5px 0px 0px 0px;
+            box-shadow: #BE4B4C 5px 0px 0px 0px;
+            margin-top: 10px;
+        }
+        .btn-custom:hover {
+            cursor: pointer;
+        }
+        .modal-footer {
+            background: #fafafa;
+        }
+        .hidden-row {
+            background: #26343C;
+            padding-bottom: 15px;
+            display: none;
+        }
+        @media (max-width: 992px) {
+            .hidden-row {
+                display: block;
+            }
+            html {
+                position: relative;
+            }
+            #abs {
+                display: none;
+            }
+            .custom-tab {
+                margin-left: 10px;
+            }
+            .flex-col {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            .nav-tabs > li {
+                flex-grow: 1;
+            }
+            .flex {
+                display: flex;
+                flex-grow: 0.7;
+                flex-wrap: wrap;
+            }
+            input[type="search"] {
+                margin-top: 20px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+
+    <div class="row hidden-row">
+        <div class="col-md-12 flex-col">
+            <ul class="nav nav-tabs flex" id="myTabs">
+                <li>
+                    <a href="#blog" class="custom-tab">
+                        Blog
+                        <span class="fa fa-bolt pull-right"></span>
+                    </a> 
+                </li>
+
+                <li>
+                    <a href="#about" class="custom-tab">
+                        About me
+                        <span class="fa fa-user pull-right"></span>
+                    </a> 
+                </li>
+
+                <li>
+                    <a href="#projects" class="custom-tab">
+                        Projects
+                        <span class="fa fa-code pull-right"></span>
+                    </a> 
+                </li>
+
+                <li>
+                    <a class="custom-tab" data-toggle="modal" data-target="#myModal">
+                        Contact
+                        <span class="fa fa-envelope-o pull-right"></span>
+                    </a> 
+                </li>
+
+            </ul>
+
+             <div class="form-group">
+                <input type="search" name="search" placeholder="search" class="form-control">
+            </div>
+        </div>
+    </div><!-- /.row -->
+
+    <header>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="https://lh3.googleusercontent.com/-UUobfMfUm9I/Vv_u0XYn8rI/AAAAAAAAM1o/O9ez9hSNnFI/s640/Cristiano%252520Ronaldo%252520-dp-profile-picture-702.jpg" class="img-rounded img-responsive profile-pic">
+                </div>
+                <div class="col-md-9">
+                    <h1>I'm Name,</h1>
+                    <h3>a software engineer.</h3>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->           
+    </header>
+
+    <section>
+        <div class="container">
+            <!-- Main Row -->
+            <div class="row main-row">
+                <div class="col-md-3">
+                    <div class="row common-block left-side-bar" id="abs">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs nav-stacked" id="myTabs">
+                                <li>
+                                    <a href="#blog" class="custom-tab">
+                                        Blog
+                                        <span class="fa fa-bolt pull-right"></span>
+                                    </a> 
+                                </li>
+
+                                <li>
+                                    <a href="#about" class="custom-tab">
+                                        About me
+                                        <span class="fa fa-user pull-right"></span>
+                                    </a> 
+                                </li>
+
+                                <li>
+                                    <a href="#projects" class="custom-tab">
+                                        Projects
+                                        <span class="fa fa-code pull-right"></span>
+                                    </a> 
+                                </li>
+
+                                <li>
+                                    <a class="custom-tab" data-toggle="modal" data-target="#myModal">
+                                        Contact
+                                        <span class="fa fa-envelope-o pull-right"></span>
+                                    </a> 
+                                </li>
+
+                            </ul>
+
+                            <div class="form-group">
+                                <br>
+                                <input type="search" name="search" placeholder="search" class="form-control">
+                            </div>
+                        </div>
+                    </div><!-- /.row -->
+
+                    <div class="row common-block left-side-bar">
+                        <div class="col-md-12">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" class="form-control">
+
+                                <button class="btn btn-custom pull-right">Subscribe</button>
+                            </div>
+                        </div>
+                    </div><!-- /.row -->
+                </div>
+
+                <div class="col-md-8 col-md-offset-1 common-block">
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="blog">
+                            <h3 class="common-header">Blog</h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+
+                        <div class="tab-pane" id="about">
+                            <h3 class="common-header">About Me</h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+
+                        <div class="tab-pane" id="projects">
+                            <h3 class="common-header">Projects</h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+
+                    </div><!-- /.tab-content -->
+
+                </div>
+            </div><!-- /Main row -->
+
+        </div><!-- /.container -->
+    </section>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Contact Me</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="modal-name">Name:</label>
+                        <input class="form-control" id="modal-name" type="text"> 
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-email">Email:</label>
+                        <input class="form-control" id="modal-email" type="email"> 
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-text">Message:</label>
+                        <textarea class="form-control" id="modal-text"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-check">
+                            <input class="" id="modal-check" type="checkbox"> &nbsp; Sign up for my email news letter?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-custom">Send</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $('#myTabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    </script>
+</body>
+</html>
