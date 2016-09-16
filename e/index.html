@@ -1,976 +1,550 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>0nl.in/e</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/landing-page.css" rel="stylesheet">
-
-    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AAAAAAMAAAAZAAAAJgAAACMAAAATAAAAAf///wD///8A////AP///wD///8A////AP///wD///8AAAAAAQAAADUMQ4CBFofy/xia9v8YlvX/FoDu+AMdPWAAAAAl////AP///wD///8A////AP///wD///8AAAAAAwMXM1oaofj/Icn+/yPW/v8k2v7/JNn+/yPQ/v8gv/z/GI70/wAABED///8A////AP///wD///8A////AAUlSGAdsfv/JNj+/yTd/v8k4P7/IuD+/yPg/v8k3f7/JNr+/yPP/v8anvj/AAAANv///wD///8A////AAAAACcbofj/Is3+/yLX/v8m5f7/D0l5/w9Qh/8PTIT/I4ij/yHX/v8i0/7/IcX+/xiI8/8AAAAJ////AP///wASaN3XILv+/yHH/v8i2v7/Ci1S/yTs//8h2P7/Idz+/yTl//8BDTX/H8f+/yDE/v8er/v/ABEiPP///wB/f38CGI/z/yG+/v8gv/7/IMj8/yDJ/P8hz/7/IdH+/yHP/v8hzv7/H8f8/x/D+/8gv/7/ILj+/xN06vj///8AAAAABRyc+P8ou/7/EC47/ysrK/8qKir/E0pd/yjF/v8ow/r/DRES/yoqKv8qKir/H42+/yi6/v8YhPH/AAAAAQAAAAQfn/j/Lrr3/xoaGv8mJib/JiYm/xISEv8vvfn/Fkpe/yAgIP8mJib/JiYm/xMTE/8wu/n/GIfz/wAAAAF/f38BG5P1/w4ODv8pKSn/Kysr/yQkJP8YGBj/Dw8P/w0NDf8lJSX/Kioq/yQkJP8XFxf/HXGY/xV17v7///8A////ABNt6vcMDAz/EhIS/xEREf8dIiT/K01a/2DR/v9awur/KDxD/xkcHv8TExP/CQkJ/w8PD/8NUbc5////AP///wAAAAAFH574/4HZ/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4rd/v8YivT/AAAAAv///wD///8A////ABFd4ZIlqfv/oOL+/6Hk/v+h5P7/oeT+/6Hk/v+h5P7/oeT+/6Pi/v8cmff/AAAAA////wD///8A////AP///wD///8AEl/mjxeW9//G7P//vuv//77r//++6///v+z//7nn//8ZjvT/ElvIDv///wD///8A////AP///wD///8A////AP///wD///8AEmnr5BeG8v8Wj/f/Fo73/xeB8P4SX+ar////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAPg/AADwDwAA4AcAAMADAACAAwAAgAEAAIABAACAAQAAgAEAAIADAADAAwAAwAcAAOAPAAD4HwAA//8AAA==" rel="icon" type="image/x-icon" />
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!doctype html>
+<html lang="">
     
-    <link rel="stylesheet" href="css/hint.min.css"></link>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>0nline</title>
+        <link rel="icon" type="image/png" href="http://i.imgur.com/QFlOJei.png">
 
-    <style type="text/css">
-        code{
-            color: black;
-            background-color: none;
-        }
-        .modal-content{
-            padding: 20px;
-            text-align: justify;
-            font-weight: normal;
-        }
-    </style>
+        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AAAAAAMAAAAZAAAAJgAAACMAAAATAAAAAf///wD///8A////AP///wD///8A////AP///wD///8AAAAAAQAAADUMQ4CBFofy/xia9v8YlvX/FoDu+AMdPWAAAAAl////AP///wD///8A////AP///wD///8AAAAAAwMXM1oaofj/Icn+/yPW/v8k2v7/JNn+/yPQ/v8gv/z/GI70/wAABED///8A////AP///wD///8A////AAUlSGAdsfv/JNj+/yTd/v8k4P7/IuD+/yPg/v8k3f7/JNr+/yPP/v8anvj/AAAANv///wD///8A////AAAAACcbofj/Is3+/yLX/v8m5f7/D0l5/w9Qh/8PTIT/I4ij/yHX/v8i0/7/IcX+/xiI8/8AAAAJ////AP///wASaN3XILv+/yHH/v8i2v7/Ci1S/yTs//8h2P7/Idz+/yTl//8BDTX/H8f+/yDE/v8er/v/ABEiPP///wB/f38CGI/z/yG+/v8gv/7/IMj8/yDJ/P8hz/7/IdH+/yHP/v8hzv7/H8f8/x/D+/8gv/7/ILj+/xN06vj///8AAAAABRyc+P8ou/7/EC47/ysrK/8qKir/E0pd/yjF/v8ow/r/DRES/yoqKv8qKir/H42+/yi6/v8YhPH/AAAAAQAAAAQfn/j/Lrr3/xoaGv8mJib/JiYm/xISEv8vvfn/Fkpe/yAgIP8mJib/JiYm/xMTE/8wu/n/GIfz/wAAAAF/f38BG5P1/w4ODv8pKSn/Kysr/yQkJP8YGBj/Dw8P/w0NDf8lJSX/Kioq/yQkJP8XFxf/HXGY/xV17v7///8A////ABNt6vcMDAz/EhIS/xEREf8dIiT/K01a/2DR/v9awur/KDxD/xkcHv8TExP/CQkJ/w8PD/8NUbc5////AP///wAAAAAFH574/4HZ/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4rd/v8YivT/AAAAAv///wD///8A////ABFd4ZIlqfv/oOL+/6Hk/v+h5P7/oeT+/6Hk/v+h5P7/oeT+/6Pi/v8cmff/AAAAA////wD///8A////AP///wD///8AEl/mjxeW9//G7P//vuv//77r//++6///v+z//7nn//8ZjvT/ElvIDv///wD///8A////AP///wD///8A////AP///wD///8AEmnr5BeG8v8Wj/f/Fo73/xeB8P4SX+ar////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAPg/AADwDwAA4AcAAMADAACAAwAAgAEAAIABAACAAQAAgAEAAIADAADAAwAAwAcAAOAPAAD4HwAA//8AAA==" rel="icon" type="image/x-icon" />
+        
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
- -->
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
-    <!-- Start of Smartsupp Live Chat script -->
-    <script type="text/javascript">
-    var _smartsupp = _smartsupp || {};
-    _smartsupp.key = '16ea6f0b6a1b71b468785c680fd7bd4a58d2c65b';
-    window.smartsupp||(function(d) {
-        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-        c.type='text/javascript';c.charset='utf-8';c.async=true;
-        c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-    })(document);
-    </script>
+        <style type="text/css">
+            .cf:before,.cf:after{content:" ";display:table}.cf:after{clear:both}.cf{*zoom:1}html,body{height:100%;background:#FFF;background-image:linear-gradient(-180deg,#FFF 0%,#FAFAFA 100%);background-size:100% 100%;font-family:'Roboto',sans-serif;box-sizing:border-box;overflow:hidden}*,:before,:after{box-sizing:inherit;outline:0;margin:0;padding:0}.clear{clear:both}.green{color:#83CD60;line-height:1.5}.align-left,.align-center,.align-right{display:inline-block}.align-left{text-align:left}.align-center{text-align:center;margin:0 auto}.align-right{text-align:right}.app-preview,.app-screen{position:absolute;z-index:1;top:0;right:0;bottom:0;left:0;background:url(images/app-preview.png) no-repeat;background-position:bottom right}@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6 2),(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx){.app-preview,.app-screen{background-image:url(images/app-preview%402x.png);background-size:693px 856px}}.app-preview.mobile,.app-screen.mobile{display:none}.app-screen{z-index:2;background:url(images/preview-screen.png) no-repeat;background-position:bottom right}@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6 2),(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx){.app-screen{background-image:url(images/preview-screen%402x.png);background-size:693px 856px}}.container{width:100%;height:100vh;margin:0 auto;position:relative;z-index:3;display:flex;align-items:center}@media screen and (max-width: 680px){.container{flex-direction:column}}.content-container{width:100%;height:100%;position:absolute;display:table}.content-container .content{width:464px;max-width:90%;display:table-cell;vertical-align:middle}.content-container .content h1{font-family:'Cabin',sans-serif;display:inline-block;font-size:30px;margin-bottom:12px;opacity:.5;font-weight:700}.content-container .content *{max-width:464px}.col{float:left}.col-1-2{width:50%;padding:0 145px;display:flex;align-items:center}@media screen and (max-width: 1460px){.col-1-2{padding:0 120px}}@media screen and (max-width: 1350px){.col-1-2{padding:0 90px}}@media screen and (max-width: 1230px){.col-1-2{padding:0 60px}}@media screen and (max-width: 900px){.col-1-2{padding:0 40px}}@media screen and (max-width: 760px){.col-1-2{padding:0 30px}}@media screen and (max-width: 680px){.col-1-2{width:100%}}.col-1-2 .footer{width:50%;margin-left:auto;margin-right:auto;position:absolute;bottom:25px;left:0;right:0;text-align:center}@media screen and (max-width: 680px){.col-1-2 .footer{width:100%}}@media screen and (max-width: 900px){.left{text-align:center}}@media screen and (max-width: 680px){.left{padding:50px 30px}}.left .content{max-width:450px;margin:auto}.left p{margin-bottom:25px}.left img{height:60px;width:auto}@media screen and (max-height: 580px){.left img{height:50px}}@media screen and (max-width: 900px){.left img{height:50px}}.left .appstore{cursor:pointer;transition:all .25s ease-in-out}.left .appstore:hover{opacity:.75;transition:all .25s ease-in-out}.left .footer{margin-left:inherit;margin-right:auto}@media screen and (max-width: 680px){.left .footer{bottom:60px}}.left .footer a{color:rgba(138,147,165,0.6);text-decoration:none}@media screen and (max-width: 680px){.left .footer a{color:rgba(0,0,0,0.33)}}.left .footer a + a{margin-left:25px}.left .footer a:hover{color:#8a93a5}@media screen and (max-width: 680px){.left .footer a:hover{color:rgba(0,0,0,0.6)}}@-webkit-keyframes color_change{0%{background-color:rgba(79,184,252,0.7)}10%{background-color:rgba(79,252,230,0.7)}20%{background-color:rgba(76,227,118,0.7)}30%{background-color:rgba(247,229,84,0.7)}40%{background-color:rgba(255,153,0,0.7)}50%{background-color:rgba(252,185,79,0.7)}60%{background-color:rgba(252,79,79,0.7)}70%{background-color:rgba(252,79,173,0.7)}80%{background-color:rgba(180,79,252,0.7)}90%{background-color:rgba(79,111,252,0.7)}100%{background-color:rgba(79,184,252,0.7)}}@-moz-keyframes color_change{0%{background-color:rgba(79,184,252,0.7)}10%{background-color:rgba(79,252,230,0.7)}20%{background-color:rgba(76,227,118,0.7)}30%{background-color:rgba(247,229,84,0.7)}40%{background-color:rgba(255,153,0,0.7)}50%{background-color:rgba(252,185,79,0.7)}60%{background-color:rgba(252,79,79,0.7)}70%{background-color:rgba(252,79,173,0.7)}80%{background-color:rgba(180,79,252,0.7)}90%{background-color:rgba(79,111,252,0.7)}100%{background-color:rgba(79,184,252,0.7)}}@-ms-keyframes color_change{0%{background-color:rgba(79,184,252,0.7)}10%{background-color:rgba(79,252,230,0.7)}20%{background-color:rgba(76,227,118,0.7)}30%{background-color:rgba(247,229,84,0.7)}40%{background-color:rgba(255,153,0,0.7)}50%{background-color:rgba(252,185,79,0.7)}60%{background-color:rgba(252,79,79,0.7)}70%{background-color:rgba(252,79,173,0.7)}80%{background-color:rgba(180,79,252,0.7)}90%{background-color:rgba(79,111,252,0.7)}100%{background-color:rgba(79,184,252,0.7)}}@-o-keyframes color_change{0%{background-color:rgba(79,184,252,0.7)}10%{background-color:rgba(79,252,230,0.7)}20%{background-color:rgba(76,227,118,0.7)}30%{background-color:rgba(247,229,84,0.7)}40%{background-color:rgba(255,153,0,0.7)}50%{background-color:rgba(252,185,79,0.7)}60%{background-color:rgba(252,79,79,0.7)}70%{background-color:rgba(252,79,173,0.7)}80%{background-color:rgba(180,79,252,0.7)}90%{background-color:rgba(79,111,252,0.7)}100%{background-color:rgba(79,184,252,0.7)}}@keyframes color_change{0%{background-color:rgba(79,184,252,0.7)}10%{background-color:rgba(79,252,230,0.7)}20%{background-color:rgba(76,227,118,0.7)}30%{background-color:rgba(247,229,84,0.7)}40%{background-color:rgba(255,153,0,0.7)}50%{background-color:rgba(252,185,79,0.7)}60%{background-color:rgba(252,79,79,0.7)}70%{background-color:rgba(252,79,173,0.7)}80%{background-color:rgba(180,79,252,0.7)}90%{background-color:rgba(79,111,252,0.7)}100%{background-color:rgba(79,184,252,0.7)}}.right{height:100vh;background-color:#FFF;-webkit-animation-name:color_change;animation-name:color_change;-webkit-animation-duration:120s;animation-duration:120s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:linear;animation-timing-function:linear}@media screen and (max-width: 680px){.right{height:auto;padding:30px 0 120px}}.right img{display:block;margin:auto;width:auto;max-width:420px}@media screen and (max-width: 1100px){.right img{max-width:370px}}@media screen and (max-width: 900px){.right img{max-width:340px}}@media screen and (max-height: 920px) and (min-width: 681px) and (max-width: 900px){.right img{max-width:300px}}@media screen and (max-height: 880px) and (min-width: 681px){.right img{max-width:290px}}@media screen and (max-height: 700px) and (min-width: 681px){.right img{max-width:270px}}@media screen and (max-height: 640px) and (min-width: 681px){.right img{max-width:260px}}@media screen and (max-height: 580px) and (min-width: 681px){.right img{max-width:220px}}@media screen and (max-height: 500px) and (min-width: 681px){.right img{max-width:180px}}@media screen and (max-width: 1080px) and (min-height: 900px){.right img{max-width:340px}}@media screen and (max-width: 880px) and (min-height: 900px){.right img{max-width:320px}}@media screen and (max-width: 780px) and (min-height: 900px){.right img{max-width:260px}}@media screen and (max-width: 400px){.right img{max-width:280px}}@media screen and (max-width: 340px){.right img{max-width:260px}}.right .footer{margin-left:auto;margin-right:inherit}.right .footer .align-center{color:rgba(0,0,0,0.33)}.right .footer a{color:rgba(0,0,0,0.33);text-decoration:none}.right .footer a:hover{color:rgba(0,0,0,0.6)}.content{width:100%;align-self:center}.content-image{float:left;width:50%;position:relative;overflow:visible;z-index:-1}.content-image .preview-image{background-size:797px 984px;width:797px;height:984px;background-image:url(images/app-preview.png);position:relative;margin-left:580px;margin-top:359px}@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6 2),(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx){.content-image .preview-image{background-image:url(images/app-preview%402x.png);background-size:797px 984px}}.content-image .preview-image-app{background-size:797px 984px;width:797px;height:984px;background-image:url(images/preview-screen.png);position:relative;margin-left:580px;margin-top:-988px}@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6 2),(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx){.content-image .preview-image-app{background-image:url(images/preview-screen%402x.png);background-size:797px 984px}}.logo--billy{width:174px;margin-bottom:25px}.overlay{display:flex;align-items:center;justify-content:center;width:100%;height:100%;background-color:rgba(13,27,45,0.9);position:absolute;top:0;left:0;z-index:9;opacity:1;transition:all .25s ease-in-out}.overlay h3{font-size:22px;margin-bottom:25px}.overlay p{font-size:17px;margin-bottom:20px}.overlay p:last-of-type{margin-bottom:0}.overlay .close{position:absolute;right:0;top:0;padding:10px;margin:20px;cursor:pointer}.overlay .close img{width:16px;height:16px}.overlay .legal-scroll{width:800px;height:450px;padding:50px;position:relative;background-color:#fff;border:1px solid #999;border:1px solid rgba(0,0,0,0.2);border-radius:6px;-webkit-box-shadow:0 3px 9px rgba(0,0,0,0.5);box-shadow:0 3px 9px rgba(0,0,0,0.5);background-clip:padding-box;outline:0}.none{opacity:0;transition:all .25s ease-in;z-index:-9999}h2{margin-bottom:8px;font-size:30px;line-height:40px}@media screen and (max-width: 1460px){h2{font-size:28px}}@media screen and (max-height: 580px){h2{font-size:26px}}@media screen and (max-width: 900px){h2{font-size:26px;line-height:1.2}}@media screen and (max-width: 500px){h2{font-size:24px}}h4{font-size:20px;margin-bottom:15px}h1,h2,h3,h4{color:#1e222b;font-weight:500}p{color:#bbc0cb;font-size:20px;line-height:1.6;margin-bottom:10px}@media screen and (max-height: 580px){p{font-size:16px}}@media screen and (max-width: 900px){p{font-size:18px}}@media screen and (max-width: 500px){p{font-size:16px}}a{-moz-transition:color .2s ease-in;-o-transition:color .2s ease-in;-webkit-transition:color .2s ease-in;transition:color .2s ease-in}img{display:inline-block;max-width:100%;width:400px;height:auto}p{margin-bottom:0;color:#8a93a5}@media screen and (max-width: 850px){.isMobile{display:none}}.no-scroll{overflow:hidden}.animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.animatedFast{-webkit-animation-duration:.75s;animation-duration:.75s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@keyframes fadeInUp{from{opacity:0;transform:translate(0,5em)}to{opacity:1;transform:none}}@-webkit-keyframes fadeInUp{from{opacity:0;transform:translate(0,5em)}to{opacity:1;transform:none}}@keyframes fadeOutDown{from{opacity:1}to{opacity:0;transform:translate(0,5em)}}@-webkit-keyframes fadeOutDown{from{opacity:1}to{opacity:0;transform:translate(0,5em)}}@-webkit-keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.fadeInUp{-webkit-animation-name:fadeInUp;animation-name:fadeInUp}.fadeOutDown{-webkit-animation-name:fadeOutDown;animation-name:fadeOutDown}.fadeIn{-webkit-animation-name:fadeIn;animation-name:fadeIn}.delayed{-webkit-animation-delay:.4s;animation-delay:.4s}.billy-video{margin:auto;width:372px;height:705px;background-image:url(images/billyapp%402x.png);background-size:372px 705px}.video--app{position:relative;left:47px;top:105px;width:277px}.legal-container{padding-top:100px;max-width:620px;margin:0 auto}.legal-container h3{font-size:22px;margin-bottom:25px}.legal-container p{font-size:16px;line-height:1.7;margin-bottom:15px}.legal-container p:last-of-type{margin-bottom:40px}@media screen and (min-width: 861px) and (max-width: 920px){.content-image .preview-image{margin-left:470px}.content-image .preview-image-app{margin-left:470px}}@media screen and (min-width: 921px) and (max-width: 1080px){.content-image .preview-image{margin-left:500px}.content-image .preview-image-app{margin-left:500px}}@media screen and (min-width: 1081px) and (max-width: 1239px){.content-image .preview-image{margin-left:530px}.content-image .preview-image-app{margin-left:530px}}@media screen and (min-width: 921px) and (max-width: 1080px){.content-image .preview-image{margin-left:470px}.content-image .preview-image-app{margin-left:470px}}@media screen and (max-width: 1240px) and (min-width: 861px){.content-container .content{padding-left:30px}.content-container .content *{max-width:424px}.footer .links{left:30px}}@media only screen and (max-width: 860px){html,body{overflow:auto;height:auto}.container{width:100%;height:100%}.content-container{height:auto;position:relative}.content-container .content{position:inherit;display:block;margin:50px auto 0;top:0;transform:translateY(0%);text-align:center;float:none;width:100%}.content-container .content *{margin:0 auto}.content-container .content .logo--billy{width:150px;margin-bottom:15px}form#subForm input[type=email]{width:100%;border-top-right-radius:6px;border-bottom-right-radius:6px;border-right:2px solid #e5e6e7;margin-bottom:0}form#subForm button{margin-top:10px;width:100%;border-top-left-radius:6px;border-bottom-left-radius:6px;position:relative;left:0;margin-bottom:15px}form#subForm h4{width:80%;margin-left:auto;margin-right:auto;margin-bottom:20px}.content-image{display:none}.footer .links{position:inherit;width:100%;text-align:center;margin-bottom:10px}.footer .links a{margin-right:26px}.footer .links a:last-of-type{margin-right:0}.mobile{display:block!important}.mobile.app-preview{width:100%;text-align:center;margin-top:40px;position:relative;z-index:1;background:inherit}.app-preview,.app-screen{display:none}}@media screen and (max-height: 1200px){.content-image .preview-image{margin-top:270px}}@media screen and (max-height: 1060px){.content-image .preview-image{margin-top:180px}}@media screen and (max-height: 900px){.content-image .preview-image{margin-top:80px}}@media screen and (max-height: 800px){.content-image .preview-image{margin-top:50px}}@media screen and (max-height: 740px){.content-image .preview-image{background-size:693px 856px;width:693px;height:856px;margin-top:40px}.content-image .preview-image-app{background-size:693px 856px;width:693px;height:856px;margin-top:-860px}}@media screen and (max-width: 1060px){.billy-video{width:353px;height:668px;background-size:353px 668px}.video--app{left:45px;top:100px;width:263px}}@media screen and (max-width: 880px){.billy-video{width:294px;height:557px;background-size:294px 557px}.video--app{left:37px;top:83px;width:219px}}@media screen and (max-width: 700px){.overlay .legal-scroll{position:fixed;display:block;left:0;top:0;width:100%;height:100%;border-radius:0;box-shadow:none;border:none}}@media screen and (max-width: 800px){.legal-container{width:100%;padding:80px 25px 0}}@media screen and (max-width: 600px){.legal-container{width:100%;padding:50px 20px 0}.legal-container h3{font-size:20px;margin-bottom:20px}.legal-container p{font-size:16px}}@media screen and (max-width: 500px){.legal-container{width:100%;padding:40px 20px 0}.legal-container h3{font-size:18px;margin-bottom:15px}.legal-container p{font-size:15px}}
+        </style>
+        <style type="text/css">
+                .marvel-device{display:inline-block;position:relative;box-sizing:content-box !important}.marvel-device .screen{width:100%;position:relative;height:100%;color:white;z-index:2;text-align:center;display:block;-webkit-border-radius:1px;border-radius:1px;-webkit-box-shadow:0 0 0 3px #111;box-shadow:0 0 0 3px #111}.marvel-device .top-bar,.marvel-device .bottom-bar{height:3px;background:black;width:100%;display:block}.marvel-device .middle-bar{width:3px;height:4px;top:0px;left:90px;background:black;position:absolute}.marvel-device.iphone6{width:375px;height:667px;padding:105px 24px;background:#d9dbdc;-webkit-border-radius:56px;border-radius:56px;-webkit-box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.2);box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.2)}.marvel-device.iphone6:before{width:calc(100% - 12px);height:calc(100% - 12px);position:absolute;top:6px;content:'';left:6px;-webkit-border-radius:50px;border-radius:50px;background:#f8f8f8;z-index:1}.marvel-device.iphone6:after{width:calc(100% - 16px);height:calc(100% - 16px);position:absolute;top:8px;content:'';left:8px;-webkit-border-radius:48px;border-radius:48px;-webkit-box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.1),inset 0 0 6px 3px #fff;box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.1),inset 0 0 6px 3px #fff;z-index:2}.marvel-device.iphone6 .home{-webkit-border-radius:100%;border-radius:100%;width:68px;height:68px;position:absolute;left:50%;margin-left:-34px;bottom:22px;z-index:3;background:#303233;background:-moz-linear-gradient(-45deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);background:-webkit-gradient(linear, left top, right bottom, color-stop(0%, #303233), color-stop(50%, #b5b7b9), color-stop(69%, #f0f2f2), color-stop(100%, #303233));background:-webkit-linear-gradient(-45deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);background:-o-linear-gradient(-45deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);background:-ms-linear-gradient(-45deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);background:linear-gradient(135deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#303233', endColorstr='#303233',GradientType=1 )}.marvel-device.iphone6 .home:before{background:#f8f8f8;position:absolute;content:'';-webkit-border-radius:100%;border-radius:100%;width:calc(100% - 8px);height:calc(100% - 8px);top:4px;left:4px}.marvel-device.iphone6 .top-bar{height:14px;background:#bfbfc0;position:absolute;top:68px;left:0}.marvel-device.iphone6 .bottom-bar{height:14px;background:#bfbfc0;position:absolute;bottom:68px;left:0}.marvel-device.iphone6 .sleep{position:absolute;top:190px;right:-4px;width:4px;height:66px;-webkit-border-radius:0px 2px 2px 0px;border-radius:0px 2px 2px 0px;background:#d9dbdc}.marvel-device.iphone6 .volume{position:absolute;left:-4px;top:188px;z-index:0;height:66px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:#d9dbdc}.marvel-device.iphone6 .volume:before{position:absolute;left:2px;top:-78px;height:40px;width:2px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:inherit;content:'';display:block}.marvel-device.iphone6 .volume:after{position:absolute;left:0px;top:82px;height:66px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:inherit;content:'';display:block}.marvel-device.iphone6 .camera{background:#3c3d3d;width:12px;height:12px;position:absolute;top:24px;left:50%;margin-left:-6px;-webkit-border-radius:100%;border-radius:100%;z-index:3}.marvel-device.iphone6 .sensor{background:#3c3d3d;width:16px;height:16px;position:absolute;top:49px;left:134px;z-index:3;-webkit-border-radius:100%;border-radius:100%}.marvel-device.iphone6 .speaker{background:#292728;width:70px;height:6px;position:absolute;top:54px;left:50%;margin-left:-35px;-webkit-border-radius:6px;border-radius:6px;z-index:3}.marvel-device.iphone6.gold{background:#f9e7d3}.marvel-device.iphone6.gold .top-bar,.marvel-device.iphone6.gold .bottom-bar{background:white}.marvel-device.iphone6.gold .sleep,.marvel-device.iphone6.gold .volume{background:#f9e7d3}.marvel-device.iphone6.gold .home{background:#cebba9;background:-moz-linear-gradient(-45deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);background:-webkit-gradient(linear, left top, right bottom, color-stop(0%, #cebba9), color-stop(50%, #f9e7d3), color-stop(100%, #cebba9));background:-webkit-linear-gradient(-45deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);background:-o-linear-gradient(-45deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);background:-ms-linear-gradient(-45deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);background:linear-gradient(135deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cebba9', endColorstr='#cebba9',GradientType=1 )}.marvel-device.iphone6.black{background:#464646;-webkit-box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.7);box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.7)}.marvel-device.iphone6.black:before{background:#080808}.marvel-device.iphone6.black:after{-webkit-box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.1),inset 0 0 6px 3px #212121;box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.1),inset 0 0 6px 3px #212121}.marvel-device.iphone6.black .top-bar,.marvel-device.iphone6.black .bottom-bar{background:#212121}.marvel-device.iphone6.black .volume,.marvel-device.iphone6.black .sleep{background:#464646}.marvel-device.iphone6.black .camera{background:#080808}.marvel-device.iphone6.black .home{background:#080808;background:-moz-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);background:-webkit-gradient(linear, left top, right bottom, color-stop(0%, #080808), color-stop(50%, #464646), color-stop(100%, #080808));background:-webkit-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);background:-o-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);background:-ms-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);background:linear-gradient(135deg, #080808 0%, #464646 50%, #080808 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#080808', endColorstr='#080808',GradientType=1 )}.marvel-device.iphone6.black .home:before{background:#080808}.marvel-device.iphone6.landscape{padding:24px 105px;height:375px;width:667px}.marvel-device.iphone6.landscape .sleep{top:100%;-webkit-border-radius:0px 0px 2px 2px;border-radius:0px 0px 2px 2px;right:190px;height:4px;width:66px}.marvel-device.iphone6.landscape .volume{width:66px;height:4px;top:-4px;left:calc(100% - 188px - 66px);-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone6.landscape .volume:before{width:40px;height:2px;top:2px;right:-78px;left:auto;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone6.landscape .volume:after{left:-82px;width:66px;height:4px;top:0;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone6.landscape .top-bar{width:14px;height:100%;left:calc(100% - 68px -  14px);top:0}.marvel-device.iphone6.landscape .bottom-bar{width:14px;height:100%;left:68px;top:0}.marvel-device.iphone6.landscape .home{top:50%;margin-top:-34px;margin-left:0;left:22px}.marvel-device.iphone6.landscape .sensor{top:134px;left:calc(100% - 49px - 16px)}.marvel-device.iphone6.landscape .speaker{height:70px;width:6px;left:calc(100% - 54px - 6px);top:50%;margin-left:0px;margin-top:-35px}.marvel-device.iphone6.landscape .camera{left:calc(100% - 32px);top:50%;margin-left:0px;margin-top:-5px}.marvel-device.iphone6plus{width:414px;height:736px;padding:112px 26px;background:#d9dbdc;-webkit-border-radius:56px;border-radius:56px;-webkit-box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.2);box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.2)}.marvel-device.iphone6plus:before{width:calc(100% - 12px);height:calc(100% - 12px);position:absolute;top:6px;content:'';left:6px;-webkit-border-radius:50px;border-radius:50px;background:#f8f8f8;z-index:1}.marvel-device.iphone6plus:after{width:calc(100% - 16px);height:calc(100% - 16px);position:absolute;top:8px;content:'';left:8px;-webkit-border-radius:48px;border-radius:48px;-webkit-box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.1),inset 0 0 6px 3px #fff;box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.1),inset 0 0 6px 3px #fff;z-index:2}.marvel-device.iphone6plus .home{-webkit-border-radius:100%;border-radius:100%;width:68px;height:68px;position:absolute;left:50%;margin-left:-34px;bottom:24px;z-index:3;background:#303233;background:-moz-linear-gradient(-45deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);background:-webkit-gradient(linear, left top, right bottom, color-stop(0%, #303233), color-stop(50%, #b5b7b9), color-stop(69%, #f0f2f2), color-stop(100%, #303233));background:-webkit-linear-gradient(-45deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);background:-o-linear-gradient(-45deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);background:-ms-linear-gradient(-45deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);background:linear-gradient(135deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#303233', endColorstr='#303233',GradientType=1 )}.marvel-device.iphone6plus .home:before{background:#f8f8f8;position:absolute;content:'';-webkit-border-radius:100%;border-radius:100%;width:calc(100% - 8px);height:calc(100% - 8px);top:4px;left:4px}.marvel-device.iphone6plus .top-bar{height:14px;background:#bfbfc0;position:absolute;top:68px;left:0}.marvel-device.iphone6plus .bottom-bar{height:14px;background:#bfbfc0;position:absolute;bottom:68px;left:0}.marvel-device.iphone6plus .sleep{position:absolute;top:190px;right:-4px;width:4px;height:66px;-webkit-border-radius:0px 2px 2px 0px;border-radius:0px 2px 2px 0px;background:#d9dbdc}.marvel-device.iphone6plus .volume{position:absolute;left:-4px;top:188px;z-index:0;height:66px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:#d9dbdc}.marvel-device.iphone6plus .volume:before{position:absolute;left:2px;top:-78px;height:40px;width:2px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:inherit;content:'';display:block}.marvel-device.iphone6plus .volume:after{position:absolute;left:0px;top:82px;height:66px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:inherit;content:'';display:block}.marvel-device.iphone6plus .camera{background:#3c3d3d;width:12px;height:12px;position:absolute;top:29px;left:50%;margin-left:-6px;-webkit-border-radius:100%;border-radius:100%;z-index:3}.marvel-device.iphone6plus .sensor{background:#3c3d3d;width:16px;height:16px;position:absolute;top:54px;left:154px;z-index:3;-webkit-border-radius:100%;border-radius:100%}.marvel-device.iphone6plus .speaker{background:#292728;width:70px;height:6px;position:absolute;top:59px;left:50%;margin-left:-35px;-webkit-border-radius:6px;border-radius:6px;z-index:3}.marvel-device.iphone6plus.gold{background:#f9e7d3}.marvel-device.iphone6plus.gold .top-bar,.marvel-device.iphone6plus.gold .bottom-bar{background:white}.marvel-device.iphone6plus.gold .sleep,.marvel-device.iphone6plus.gold .volume{background:#f9e7d3}.marvel-device.iphone6plus.gold .home{background:#cebba9;background:-moz-linear-gradient(-45deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);background:-webkit-gradient(linear, left top, right bottom, color-stop(0%, #cebba9), color-stop(50%, #f9e7d3), color-stop(100%, #cebba9));background:-webkit-linear-gradient(-45deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);background:-o-linear-gradient(-45deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);background:-ms-linear-gradient(-45deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);background:linear-gradient(135deg, #cebba9 0%, #f9e7d3 50%, #cebba9 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cebba9', endColorstr='#cebba9',GradientType=1 )}.marvel-device.iphone6plus.black{background:#464646;-webkit-box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.7);box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.7)}.marvel-device.iphone6plus.black:before{background:#080808}.marvel-device.iphone6plus.black:after{-webkit-box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.1),inset 0 0 6px 3px #212121;box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.1),inset 0 0 6px 3px #212121}.marvel-device.iphone6plus.black .top-bar,.marvel-device.iphone6plus.black .bottom-bar{background:#212121}.marvel-device.iphone6plus.black .volume,.marvel-device.iphone6plus.black .sleep{background:#464646}.marvel-device.iphone6plus.black .camera{background:#080808}.marvel-device.iphone6plus.black .home{background:#080808;background:-moz-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);background:-webkit-gradient(linear, left top, right bottom, color-stop(0%, #080808), color-stop(50%, #464646), color-stop(100%, #080808));background:-webkit-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);background:-o-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);background:-ms-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);background:linear-gradient(135deg, #080808 0%, #464646 50%, #080808 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#080808', endColorstr='#080808',GradientType=1 )}.marvel-device.iphone6plus.black .home:before{background:#080808}.marvel-device.iphone6plus.landscape{padding:26px 112px;height:414px;width:736px}.marvel-device.iphone6plus.landscape .sleep{top:100%;-webkit-border-radius:0px 0px 2px 2px;border-radius:0px 0px 2px 2px;right:190px;height:4px;width:66px}.marvel-device.iphone6plus.landscape .volume{width:66px;height:4px;top:-4px;left:calc(100% - 188px - 66px);-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone6plus.landscape .volume:before{width:40px;height:2px;top:2px;right:-78px;left:auto;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone6plus.landscape .volume:after{left:-82px;width:66px;height:4px;top:0;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone6plus.landscape .top-bar{width:14px;height:100%;left:calc(100% - 68px -  14px);top:0}.marvel-device.iphone6plus.landscape .bottom-bar{width:14px;height:100%;left:68px;top:0}.marvel-device.iphone6plus.landscape .home{top:50%;margin-top:-34px;margin-left:0;left:24px}.marvel-device.iphone6plus.landscape .sensor{top:154px;left:calc(100% - 54px - 16px)}.marvel-device.iphone6plus.landscape .speaker{height:70px;width:6px;left:calc(100% - 59px - 6px);top:50%;margin-left:0px;margin-top:-35px}.marvel-device.iphone6plus.landscape .camera{left:calc(100% - 29px);top:50%;margin-left:0px;margin-top:-5px}.marvel-device.iphone5s,.marvel-device.iphone5c{padding:105px 22px;background:#2c2b2c;width:320px;height:568px;-webkit-border-radius:50px;border-radius:50px}.marvel-device.iphone5s:before,.marvel-device.iphone5c:before{width:calc(100% - 8px);height:calc(100% - 8px);position:absolute;top:4px;content:'';left:4px;-webkit-border-radius:46px;border-radius:46px;background:#1e1e1e;z-index:1}.marvel-device.iphone5s .sleep,.marvel-device.iphone5c .sleep{position:absolute;top:-4px;right:60px;width:60px;height:4px;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px;background:#282727}.marvel-device.iphone5s .volume,.marvel-device.iphone5c .volume{position:absolute;left:-4px;top:180px;z-index:0;height:27px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:#282727}.marvel-device.iphone5s .volume:before,.marvel-device.iphone5c .volume:before{position:absolute;left:0px;top:-75px;height:35px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:inherit;content:'';display:block}.marvel-device.iphone5s .volume:after,.marvel-device.iphone5c .volume:after{position:absolute;left:0px;bottom:-64px;height:27px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:inherit;content:'';display:block}.marvel-device.iphone5s .camera,.marvel-device.iphone5c .camera{background:#3c3d3d;width:10px;height:10px;position:absolute;top:32px;left:50%;margin-left:-5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;z-index:3}.marvel-device.iphone5s .sensor,.marvel-device.iphone5c .sensor{background:#3c3d3d;width:10px;height:10px;position:absolute;top:60px;left:160px;z-index:3;margin-left:-32px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.marvel-device.iphone5s .speaker,.marvel-device.iphone5c .speaker{background:#292728;width:64px;height:10px;position:absolute;top:60px;left:50%;margin-left:-32px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;z-index:3}.marvel-device.iphone5s.landscape,.marvel-device.iphone5c.landscape{padding:22px 105px;height:320px;width:568px}.marvel-device.iphone5s.landscape .sleep,.marvel-device.iphone5c.landscape .sleep{right:-4px;top:calc(100% - 120px);height:60px;width:4px;-webkit-border-radius:0px 2px 2px 0px;border-radius:0px 2px 2px 0px}.marvel-device.iphone5s.landscape .volume,.marvel-device.iphone5c.landscape .volume{width:27px;height:4px;top:-4px;left:calc(100% - 180px);-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone5s.landscape .volume:before,.marvel-device.iphone5c.landscape .volume:before{width:35px;height:4px;top:0px;right:-75px;left:auto;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone5s.landscape .volume:after,.marvel-device.iphone5c.landscape .volume:after{bottom:0px;left:-64px;z-index:999;height:4px;width:27px;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone5s.landscape .sensor,.marvel-device.iphone5c.landscape .sensor{top:160px;left:calc(100% - 60px);margin-left:0px;margin-top:-32px}.marvel-device.iphone5s.landscape .speaker,.marvel-device.iphone5c.landscape .speaker{height:64px;width:10px;left:calc(100% - 60px);top:50%;margin-left:0px;margin-top:-32px}.marvel-device.iphone5s.landscape .camera,.marvel-device.iphone5c.landscape .camera{left:calc(100% - 32px);top:50%;margin-left:0px;margin-top:-5px}.marvel-device.iphone5s .home{-moz-border-radius:36px;-webkit-border-radius:36px;border-radius:36px;width:68px;-webkit-box-shadow:inset 0 0 0 4px #2c2b2c;box-shadow:inset 0 0 0 4px #2c2b2c;height:68px;position:absolute;left:50%;margin-left:-34px;bottom:19px;z-index:3}.marvel-device.iphone5s .top-bar{top:70px;position:absolute;left:0}.marvel-device.iphone5s .bottom-bar{bottom:70px;position:absolute;left:0}.marvel-device.iphone5s.landscape .home{left:19px;bottom:50%;margin-bottom:-34px;margin-left:0px}.marvel-device.iphone5s.landscape .top-bar{left:70px;top:0px;width:3px;height:100%}.marvel-device.iphone5s.landscape .bottom-bar{right:70px;left:auto;bottom:0px;width:3px;height:100%}.marvel-device.iphone5s.silver{background:#bcbcbc}.marvel-device.iphone5s.silver:before{background:#fcfcfc}.marvel-device.iphone5s.silver .volume,.marvel-device.iphone5s.silver .sleep{background:#d6d6d6}.marvel-device.iphone5s.silver .top-bar,.marvel-device.iphone5s.silver .bottom-bar{background:#eaebec}.marvel-device.iphone5s.silver .home{-webkit-box-shadow:inset 0 0 0 4px #bcbcbc;box-shadow:inset 0 0 0 4px #bcbcbc}.marvel-device.iphone5s.gold{background:#f9e7d3}.marvel-device.iphone5s.gold:before{background:#fcfcfc}.marvel-device.iphone5s.gold .volume,.marvel-device.iphone5s.gold .sleep{background:#f9e7d3}.marvel-device.iphone5s.gold .top-bar,.marvel-device.iphone5s.gold .bottom-bar{background:white}.marvel-device.iphone5s.gold .home{-webkit-box-shadow:inset 0 0 0 4px #f9e7d3;box-shadow:inset 0 0 0 4px #f9e7d3}.marvel-device.iphone5c{background:white;-webkit-box-shadow:0 1px 2px 0 rgba(0,0,0,0.2);box-shadow:0 1px 2px 0 rgba(0,0,0,0.2)}.marvel-device.iphone5c .top-bar,.marvel-device.iphone5c .bottom-bar{display:none}.marvel-device.iphone5c .home{background:#242324;-moz-border-radius:36px;-webkit-border-radius:36px;border-radius:36px;width:68px;height:68px;z-index:3;position:absolute;left:50%;margin-left:-34px;bottom:19px}.marvel-device.iphone5c .home:after{width:20px;height:20px;border:1px solid rgba(255,255,255,0.1);-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;position:absolute;display:block;content:'';top:50%;left:50%;margin-top:-11px;margin-left:-11px}.marvel-device.iphone5c.landscape .home{left:19px;bottom:50%;margin-bottom:-34px;margin-left:0px}.marvel-device.iphone5c .volume,.marvel-device.iphone5c .sleep{background:#dddddd}.marvel-device.iphone5c.red{background:#f96b6c}.marvel-device.iphone5c.red .volume,.marvel-device.iphone5c.red .sleep{background:#ed5758}.marvel-device.iphone5c.yellow{background:#f2dc60}.marvel-device.iphone5c.yellow .volume,.marvel-device.iphone5c.yellow .sleep{background:#e5ce4c}.marvel-device.iphone5c.green{background:#97e563}.marvel-device.iphone5c.green .volume,.marvel-device.iphone5c.green .sleep{background:#85d94d}.marvel-device.iphone5c.blue{background:#33a2db}.marvel-device.iphone5c.blue .volume,.marvel-device.iphone5c.blue .sleep{background:#2694cd}.marvel-device.iphone4s{padding:129px 27px;width:320px;height:480px;background:#686868;-webkit-border-radius:54px;border-radius:54px}.marvel-device.iphone4s:before{content:'';width:calc(100% - 8px);height:calc(100% - 8px);position:absolute;top:4px;left:4px;z-index:1;-webkit-border-radius:50px;border-radius:50px;background:#1e1e1e}.marvel-device.iphone4s .top-bar{top:60px;position:absolute;left:0}.marvel-device.iphone4s .bottom-bar{bottom:90px;position:absolute;left:0}.marvel-device.iphone4s .camera{background:#3c3d3d;width:10px;height:10px;position:absolute;top:72px;left:134px;z-index:3;margin-left:-5px;-webkit-border-radius:100%;border-radius:100%}.marvel-device.iphone4s .speaker{background:#292728;width:64px;height:10px;position:absolute;top:72px;left:50%;z-index:3;margin-left:-32px;-webkit-border-radius:5px;border-radius:5px}.marvel-device.iphone4s .sensor{background:#292728;width:40px;height:10px;position:absolute;top:36px;left:50%;z-index:3;margin-left:-20px;-webkit-border-radius:5px;border-radius:5px}.marvel-device.iphone4s .home{background:#242324;-webkit-border-radius:100%;border-radius:100%;width:72px;height:72px;z-index:3;position:absolute;left:50%;margin-left:-36px;bottom:30px}.marvel-device.iphone4s .home:after{width:20px;height:20px;border:1px solid rgba(255,255,255,0.1);-webkit-border-radius:4px;border-radius:4px;position:absolute;display:block;content:'';top:50%;left:50%;margin-top:-11px;margin-left:-11px}.marvel-device.iphone4s .sleep{position:absolute;top:-4px;right:60px;width:60px;height:4px;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px;background:#4D4D4D}.marvel-device.iphone4s .volume{position:absolute;left:-4px;top:160px;height:27px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:#4D4D4D}.marvel-device.iphone4s .volume:before{position:absolute;left:0px;top:-70px;height:35px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:inherit;content:'';display:block}.marvel-device.iphone4s .volume:after{position:absolute;left:0px;bottom:-64px;height:27px;width:4px;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px;background:inherit;content:'';display:block}.marvel-device.iphone4s.landscape{padding:27px 129px;height:320px;width:480px}.marvel-device.iphone4s.landscape .bottom-bar{left:90px;bottom:0px;height:100%;width:3px}.marvel-device.iphone4s.landscape .top-bar{left:calc(100% - 60px);top:0px;height:100%;width:3px}.marvel-device.iphone4s.landscape .camera{top:134px;left:calc(100% - 72px);margin-left:0}.marvel-device.iphone4s.landscape .speaker{top:50%;margin-left:0;margin-top:-32px;left:calc(100% - 72px);width:10px;height:64px}.marvel-device.iphone4s.landscape .sensor{height:40px;width:10px;left:calc(100% - 36px);top:50%;margin-left:0;margin-top:-20px}.marvel-device.iphone4s.landscape .home{left:30px;bottom:50%;margin-left:0;margin-bottom:-36px}.marvel-device.iphone4s.landscape .sleep{height:60px;width:4px;right:-4px;top:calc(100% - 120px);-webkit-border-radius:0px 2px 2px 0px;border-radius:0px 2px 2px 0px}.marvel-device.iphone4s.landscape .volume{top:-4px;left:calc(100% - 187px);height:4px;width:27px;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone4s.landscape .volume:before{right:-70px;left:auto;top:0px;width:35px;height:4px;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone4s.landscape .volume:after{width:27px;height:4px;bottom:0px;left:-64px;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.iphone4s.silver{background:#bcbcbc}.marvel-device.iphone4s.silver:before{background:#fcfcfc}.marvel-device.iphone4s.silver .home{background:#fcfcfc;-webkit-box-shadow:inset 0 0 0 1px #bcbcbc;box-shadow:inset 0 0 0 1px #bcbcbc}.marvel-device.iphone4s.silver .home:after{border:1px solid rgba(0,0,0,0.2)}.marvel-device.iphone4s.silver .volume,.marvel-device.iphone4s.silver .sleep{background:#d6d6d6}.marvel-device.nexus5{padding:50px 15px 50px 15px;width:320px;height:568px;background:#1e1e1e;-webkit-border-radius:20px;border-radius:20px}.marvel-device.nexus5:before{-webkit-border-radius:600px / 50px;border-radius:600px / 50px;background:inherit;content:'';top:0;position:absolute;height:103.1%;width:calc(100% - 26px);top:50%;left:50%;-moz-transform:translateX(-50%) translateY(-50%);-webkit-transform:translateX(-50%) translateY(-50%);-o-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.marvel-device.nexus5 .top-bar{width:calc(100% - 8px);height:calc(100% - 6px);position:absolute;top:3px;left:4px;-webkit-border-radius:20px;border-radius:20px;background:#181818}.marvel-device.nexus5 .top-bar:before{-webkit-border-radius:600px / 50px;border-radius:600px / 50px;background:inherit;content:'';top:0;position:absolute;height:103.0%;width:calc(100% - 26px);top:50%;left:50%;-moz-transform:translateX(-50%) translateY(-50%);-webkit-transform:translateX(-50%) translateY(-50%);-o-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.marvel-device.nexus5 .bottom-bar{display:none}.marvel-device.nexus5 .sleep{width:3px;position:absolute;left:-3px;top:110px;height:100px;background:inherit;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px}.marvel-device.nexus5 .volume{width:3px;position:absolute;right:-3px;top:70px;height:45px;background:inherit;-webkit-border-radius:0px 2px 2px 0px;border-radius:0px 2px 2px 0px}.marvel-device.nexus5 .camera{background:#3c3d3d;width:10px;height:10px;position:absolute;top:18px;left:50%;z-index:3;margin-left:-5px;-webkit-border-radius:100%;border-radius:100%}.marvel-device.nexus5 .camera:before{background:#3c3d3d;width:6px;height:6px;content:'';display:block;position:absolute;top:2px;left:-100px;z-index:3;-webkit-border-radius:100%;border-radius:100%}.marvel-device.nexus5.landscape{padding:15px 50px 15px 50px;height:320px;width:568px}.marvel-device.nexus5.landscape:before{width:103.1%;height:calc(100% - 26px);-webkit-border-radius:50px / 600px;border-radius:50px / 600px}.marvel-device.nexus5.landscape .top-bar{left:3px;top:4px;height:calc(100% - 8px);width:calc(100% - 6px)}.marvel-device.nexus5.landscape .top-bar:before{width:103%;height:calc(100% - 26px);-webkit-border-radius:50px / 600px;border-radius:50px / 600px}.marvel-device.nexus5.landscape .sleep{height:3px;width:100px;left:calc(100% - 210px);top:-3px;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.nexus5.landscape .volume{height:3px;width:45px;right:70px;top:100%;-webkit-border-radius:0px 0px 2px 2px;border-radius:0px 0px 2px 2px}.marvel-device.nexus5.landscape .camera{top:50%;left:calc(100% - 18px);margin-left:0;margin-top:-5px}.marvel-device.nexus5.landscape .camera:before{top:-100px;left:2px}.marvel-device.s5{padding:60px 18px;-webkit-border-radius:42px;border-radius:42px;width:320px;height:568px;background:#bcbcbc}.marvel-device.s5:before,.marvel-device.s5:after{width:calc(100% - 52px);content:'';display:block;height:26px;background:inherit;position:absolute;-webkit-border-radius:500px / 40px;border-radius:500px / 40px;left:50%;-moz-transform:translateX(-50%);-webkit-transform:translateX(-50%);-o-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}.marvel-device.s5:before{top:-7px}.marvel-device.s5:after{bottom:-7px}.marvel-device.s5 .bottom-bar{display:none}.marvel-device.s5 .top-bar{-webkit-border-radius:37px;border-radius:37px;width:calc(100% - 10px);height:calc(100% - 10px);top:5px;left:5px;background:radial-gradient(rgba(0,0,0,0.02) 20%, transparent 60%) 0 0,radial-gradient(rgba(0,0,0,0.02) 20%, transparent 60%) 3px 3px;background-color:white;background-size:4px 4px;background-position:center;z-index:2;position:absolute}.marvel-device.s5 .top-bar:before,.marvel-device.s5 .top-bar:after{width:calc(100% - 48px);content:'';display:block;height:26px;background:inherit;position:absolute;-webkit-border-radius:500px / 40px;border-radius:500px / 40px;left:50%;-moz-transform:translateX(-50%);-webkit-transform:translateX(-50%);-o-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}.marvel-device.s5 .top-bar:before{top:-7px}.marvel-device.s5 .top-bar:after{bottom:-7px}.marvel-device.s5 .sleep{width:3px;position:absolute;left:-3px;top:100px;height:100px;background:#cecece;-webkit-border-radius:2px 0px 0px 2px;border-radius:2px 0px 0px 2px}.marvel-device.s5 .speaker{width:68px;height:8px;position:absolute;top:20px;display:block;z-index:3;left:50%;margin-left:-34px;background-color:#bcbcbc;background-position:top left;-webkit-border-radius:4px;border-radius:4px}.marvel-device.s5 .sensor{display:block;position:absolute;top:20px;right:110px;background:#3c3d3d;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;width:8px;height:8px;z-index:3}.marvel-device.s5 .sensor:after{display:block;content:'';position:absolute;top:0px;right:12px;background:#3c3d3d;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;width:8px;height:8px;z-index:3}.marvel-device.s5 .camera{display:block;position:absolute;top:24px;right:42px;background:black;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;width:10px;height:10px;z-index:3}.marvel-device.s5 .camera:before{width:4px;height:4px;background:#3c3d3d;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;position:absolute;content:'';top:50%;left:50%;margin-top:-2px;margin-left:-2px}.marvel-device.s5 .home{position:absolute;z-index:3;bottom:17px;left:50%;width:70px;height:20px;background:white;-webkit-border-radius:18px;border-radius:18px;display:block;margin-left:-35px;border:2px solid black}.marvel-device.s5.landscape{padding:18px 60px;height:320px;width:568px}.marvel-device.s5.landscape:before,.marvel-device.s5.landscape:after{height:calc(100% - 52px);width:26px;-webkit-border-radius:40px / 500px;border-radius:40px / 500px;-moz-transform:translateY(-50%);-webkit-transform:translateY(-50%);-o-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.marvel-device.s5.landscape:before{top:50%;left:-7px}.marvel-device.s5.landscape:after{top:50%;left:auto;right:-7px}.marvel-device.s5.landscape .top-bar:before,.marvel-device.s5.landscape .top-bar:after{width:26px;height:calc(100% - 48px);-webkit-border-radius:40px / 500px;border-radius:40px / 500px;-moz-transform:translateY(-50%);-webkit-transform:translateY(-50%);-o-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.marvel-device.s5.landscape .top-bar:before{right:-7px;top:50%;left:auto}.marvel-device.s5.landscape .top-bar:after{left:-7px;top:50%;right:auto}.marvel-device.s5.landscape .sleep{height:3px;width:100px;left:calc(100% - 200px);top:-3px;-webkit-border-radius:2px 2px 0px 0px;border-radius:2px 2px 0px 0px}.marvel-device.s5.landscape .speaker{height:68px;width:8px;left:calc(100% - 20px);top:50%;margin-left:0;margin-top:-34px}.marvel-device.s5.landscape .sensor{right:20px;top:calc(100% - 110px)}.marvel-device.s5.landscape .sensor:after{left:-12px;right:0px}.marvel-device.s5.landscape .camera{top:calc(100% - 42px);right:24px}.marvel-device.s5.landscape .home{width:20px;height:70px;bottom:50%;margin-bottom:-35px;margin-left:0;left:17px}.marvel-device.s5.black{background:#1e1e1e}.marvel-device.s5.black .speaker{background:black}.marvel-device.s5.black .sleep{background:#1e1e1e}.marvel-device.s5.black .top-bar{background:radial-gradient(rgba(0,0,0,0.05) 20%, transparent 60%) 0 0,radial-gradient(rgba(0,0,0,0.05) 20%, transparent 60%) 3px 3px;background-color:#2c2b2c;background-size:4px 4px}.marvel-device.s5.black .home{background:#2c2b2c}.marvel-device.lumia920{padding:80px 35px 125px 35px;background:#ffdd00;width:320px;height:533px;-moz-border-radius:40px / 3px;-webkit-border-radius:40px / 3px;border-radius:40px / 3px}.marvel-device.lumia920 .bottom-bar{display:none}.marvel-device.lumia920 .top-bar{width:calc(100% - 24px);height:calc(100% - 32px);position:absolute;top:16px;left:12px;-moz-border-radius:24px;-webkit-border-radius:24px;border-radius:24px;background:black;z-index:1}.marvel-device.lumia920 .top-bar:before{background:#1e1e1e;display:block;content:'';width:calc(100% - 4px);height:calc(100% - 4px);top:2px;left:2px;position:absolute;-moz-border-radius:22px;-webkit-border-radius:22px;border-radius:22px}.marvel-device.lumia920 .volume{width:3px;position:absolute;top:130px;height:100px;background:#1e1e1e;right:-3px;-webkit-border-radius:0px 2px 2px 0px;border-radius:0px 2px 2px 0px}.marvel-device.lumia920 .volume:before{width:3px;position:absolute;top:190px;content:'';display:block;height:50px;background:inherit;right:0px;-webkit-border-radius:0px 2px 2px 0px;border-radius:0px 2px 2px 0px}.marvel-device.lumia920 .volume:after{width:3px;position:absolute;top:460px;content:'';display:block;height:50px;background:inherit;right:0px;-webkit-border-radius:0px 2px 2px 0px;border-radius:0px 2px 2px 0px}.marvel-device.lumia920 .camera{background:#3c3d3d;width:10px;height:10px;position:absolute;top:34px;right:130px;z-index:5;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.marvel-device.lumia920 .speaker{background:#292728;width:64px;height:10px;position:absolute;top:38px;left:50%;margin-left:-32px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;z-index:3}.marvel-device.lumia920.landscape{padding:35px 80px 35px 125px;height:320px;width:568px;-moz-border-radius:2px / 100px;-webkit-border-radius:2px / 100px;border-radius:2px / 100px}.marvel-device.lumia920.landscape .top-bar{height:calc(100% - 24px);width:calc(100% - 32px);left:16px;top:12px}.marvel-device.lumia920.landscape .volume{height:3px;right:130px;width:100px;top:100%;-webkit-border-radius:0px 0px 2px 2px;border-radius:0px 0px 2px 2px}.marvel-device.lumia920.landscape .volume:before{height:3px;right:190px;top:0px;width:50px;-webkit-border-radius:0px 0px 2px 2px;border-radius:0px 0px 2px 2px}.marvel-device.lumia920.landscape .volume:after{height:3px;right:430px;top:0px;width:50px;-webkit-border-radius:0px 0px 2px 2px;border-radius:0px 0px 2px 2px}.marvel-device.lumia920.landscape .camera{right:30px;top:calc(100% - 140px)}.marvel-device.lumia920.landscape .speaker{width:10px;height:64px;top:50%;margin-left:0;margin-top:-32px;left:calc(100% - 48px)}.marvel-device.lumia920.black{background:black}.marvel-device.lumia920.white{background:white;-webkit-box-shadow:0 1px 2px 0 rgba(0,0,0,0.2);box-shadow:0 1px 2px 0 rgba(0,0,0,0.2)}.marvel-device.lumia920.blue{background:#00acdd}.marvel-device.lumia920.red{background:#CC3E32}.marvel-device.htc-one{padding:72px 25px 100px 25px;width:320px;height:568px;background:#bebebe;-webkit-border-radius:34px;border-radius:34px}.marvel-device.htc-one:before{content:'';display:block;width:calc(100% - 4px);height:calc(100% - 4px);position:absolute;top:2px;left:2px;background:#adadad;-webkit-border-radius:32px;border-radius:32px}.marvel-device.htc-one:after{content:'';display:block;width:calc(100% - 8px);height:calc(100% - 8px);position:absolute;top:4px;left:4px;background:#eeeeee;-webkit-border-radius:30px;border-radius:30px}.marvel-device.htc-one .top-bar{width:calc(100% - 4px);height:635px;position:absolute;background:#424242;top:50px;z-index:1;left:2px}.marvel-device.htc-one .top-bar:before{content:'';position:absolute;width:calc(100% - 4px);height:100%;position:absolute;background:black;top:0px;z-index:1;left:2px}.marvel-device.htc-one .bottom-bar{display:none}.marvel-device.htc-one .speaker{height:16px;width:216px;display:block;position:absolute;top:22px;z-index:2;left:50%;margin-left:-108px;background:radial-gradient(#343434 25%, transparent 50%) 0 0,radial-gradient(#343434 25%, transparent 50%) 4px 4px;background-size:4px 4px;background-position:top left}.marvel-device.htc-one .speaker:after{content:'';height:16px;width:216px;display:block;position:absolute;top:676px;z-index:2;left:50%;margin-left:-108px;background:inherit}.marvel-device.htc-one .camera{display:block;position:absolute;top:18px;right:38px;background:#3c3d3d;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;width:24px;height:24px;z-index:3}.marvel-device.htc-one .camera:before{width:8px;height:8px;background:black;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;position:absolute;content:'';top:50%;left:50%;margin-top:-4px;margin-left:-4px}.marvel-device.htc-one .sensor{display:block;position:absolute;top:29px;left:60px;background:#3c3d3d;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;width:8px;height:8px;z-index:3}.marvel-device.htc-one .sensor:after{display:block;content:'';position:absolute;top:0px;right:12px;background:#3c3d3d;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%;width:8px;height:8px;z-index:3}.marvel-device.htc-one.landscape{padding:25px 72px 25px 100px;height:320px;width:568px}.marvel-device.htc-one.landscape .top-bar{height:calc(100% - 4px);width:635px;left:calc(100% - 685px);top:2px}.marvel-device.htc-one.landscape .speaker{width:16px;height:216px;left:calc(100% - 38px);top:50%;margin-left:0px;margin-top:-108px}.marvel-device.htc-one.landscape .speaker:after{width:16px;height:216px;left:calc(100% - 692px);top:50%;margin-left:0;margin-top:-108px}.marvel-device.htc-one.landscape .camera{right:18px;top:calc(100% - 38px)}.marvel-device.htc-one.landscape .sensor{left:calc(100% - 29px);top:60px}.marvel-device.htc-one.landscape .sensor :after{right:0;top:-12px}.marvel-device.ipad{width:576px;height:768px;padding:90px 25px;background:#242324;-webkit-border-radius:44px;border-radius:44px}.marvel-device.ipad:before{width:calc(100% - 8px);height:calc(100% - 8px);position:absolute;content:'';display:block;top:4px;left:4px;-webkit-border-radius:40px;border-radius:40px;background:#1e1e1e}.marvel-device.ipad .camera{background:#3c3d3d;width:10px;height:10px;position:absolute;top:44px;left:50%;margin-left:-5px;-webkit-border-radius:100%;border-radius:100%}.marvel-device.ipad .top-bar,.marvel-device.ipad .bottom-bar{display:none}.marvel-device.ipad .home{background:#242324;-webkit-border-radius:36px;border-radius:36px;width:50px;height:50px;position:absolute;left:50%;margin-left:-25px;bottom:22px}.marvel-device.ipad .home:after{width:15px;height:15px;margin-top:-8px;margin-left:-8px;border:1px solid rgba(255,255,255,0.1);-webkit-border-radius:4px;border-radius:4px;position:absolute;display:block;content:'';top:50%;left:50%}.marvel-device.ipad.landscape{height:576px;width:768px;padding:25px 90px}.marvel-device.ipad.landscape .camera{left:calc(100% - 44px);top:50%;margin-left:0;margin-top:-5px}.marvel-device.ipad.landscape .home{top:50%;left:22px;margin-left:0;margin-top:-25px}.marvel-device.ipad.silver{background:#bcbcbc}.marvel-device.ipad.silver:before{background:#fcfcfc}.marvel-device.ipad.silver .home{background:#fcfcfc;-webkit-box-shadow:inset 0 0 0 1px #bcbcbc;box-shadow:inset 0 0 0 1px #bcbcbc}.marvel-device.ipad.silver .home:after{border:1px solid rgba(0,0,0,0.2)}.marvel-device.macbook{width:960px;height:600px;padding:44px 44px 76px;margin:0 auto;background:#bebebe;-webkit-border-radius:34px;border-radius:34px}.marvel-device.macbook:before{width:calc(100% - 8px);height:calc(100% - 8px);position:absolute;content:'';display:block;top:4px;left:4px;-webkit-border-radius:30px;border-radius:30px;background:#1e1e1e}.marvel-device.macbook .top-bar{width:calc(100% + 2 * 70px);height:40px;position:absolute;content:'';display:block;top:680px;left:-70px;border-bottom-left-radius:90px 18px;border-bottom-right-radius:90px 18px;background:#bebebe;-webkit-box-shadow:inset 0px -4px 13px 3px rgba(34,34,34,0.6);-moz-box-shadow:inset 0px -4px 13px 3px rgba(34,34,34,0.6);box-shadow:inset 0px -4px 13px 3px rgba(34,34,34,0.6)}.marvel-device.macbook .top-bar:before{width:100%;height:24px;content:'';display:block;top:0;left:0;background:#f0f0f0;border-bottom:2px solid #aaa;-webkit-border-radius:5px;border-radius:5px;position:relative}.marvel-device.macbook .top-bar:after{width:16%;height:14px;content:'';display:block;top:0;background:#ddd;position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;-webkit-border-radius:0 0 20px 20px;border-radius:0 0 20px 20px;-webkit-box-shadow:inset 0px -3px 10px #999;-moz-box-shadow:inset 0px -3px 10px #999;box-shadow:inset 0px -3px 10px #999}.marvel-device.macbook .bottom-bar{background:transparent;width:calc(100% + 2 * 70px);height:26px;position:absolute;content:'';display:block;top:680px;left:-70px}.marvel-device.macbook .bottom-bar:before,.marvel-device.macbook .bottom-bar:after{height:calc(100% - 2px);width:80px;content:'';display:block;top:0;position:absolute}.marvel-device.macbook .bottom-bar:before{left:0;background:#f0f0f0;background:-moz-linear-gradient(left, #747474 0%, #c3c3c3 5%, #ebebeb 14%, #979797 41%, #f0f0f0 80%, #f0f0f0 100%, #f0f0f0 100%);background:-webkit-gradient(linear, left top, right top, color-stop(0%, #747474), color-stop(5%, #c3c3c3), color-stop(14%, #ebebeb), color-stop(41%, #979797), color-stop(80%, #f0f0f0), color-stop(100%, #f0f0f0), color-stop(100%, #f0f0f0));background:-webkit-linear-gradient(left, #747474 0%, #c3c3c3 5%, #ebebeb 14%, #979797 41%, #f0f0f0 80%, #f0f0f0 100%, #f0f0f0 100%);background:-o-linear-gradient(left, #747474 0%, #c3c3c3 5%, #ebebeb 14%, #979797 41%, #f0f0f0 80%, #f0f0f0 100%, #f0f0f0 100%);background:-ms-linear-gradient(left, #747474 0%, #c3c3c3 5%, #ebebeb 14%, #979797 41%, #f0f0f0 80%, #f0f0f0 100%, #f0f0f0 100%);background:linear-gradient(to right, #747474 0%, #c3c3c3 5%, #ebebeb 14%, #979797 41%, #f0f0f0 80%, #f0f0f0 100%, #f0f0f0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#747474', endColorstr='#f0f0f0', GradientType=1)}.marvel-device.macbook .bottom-bar:after{right:0;background:#f0f0f0;background:-moz-linear-gradient(left, #f0f0f0 0%, #f0f0f0 0%, #f0f0f0 20%, #979797 59%, #ebebeb 86%, #c3c3c3 95%, #747474 100%);background:-webkit-gradient(linear, left top, right top, color-stop(0%, #f0f0f0), color-stop(0%, #f0f0f0), color-stop(20%, #f0f0f0), color-stop(59%, #979797), color-stop(86%, #ebebeb), color-stop(95%, #c3c3c3), color-stop(100%, #747474));background:-webkit-linear-gradient(left, #f0f0f0 0%, #f0f0f0 0%, #f0f0f0 20%, #979797 59%, #ebebeb 86%, #c3c3c3 95%, #747474 100%);background:-o-linear-gradient(left, #f0f0f0 0%, #f0f0f0 0%, #f0f0f0 20%, #979797 59%, #ebebeb 86%, #c3c3c3 95%, #747474 100%);background:-ms-linear-gradient(left, #f0f0f0 0%, #f0f0f0 0%, #f0f0f0 20%, #979797 59%, #ebebeb 86%, #c3c3c3 95%, #747474 100%);background:linear-gradient(to right, #f0f0f0 0%, #f0f0f0 0%, #f0f0f0 20%, #979797 59%, #ebebeb 86%, #c3c3c3 95%, #747474 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#747474', GradientType=1)}.marvel-device.macbook .camera{background:#3c3d3d;width:10px;height:10px;position:absolute;top:20px;left:50%;margin-left:-5px;-webkit-border-radius:100%;border-radius:100%}.marvel-device.macbook .home{display:none}
 
-</head>
+        </style>
 
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand topnav" href="/e/"><h1><code>0nline</code></h1></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- <li>
-                        <a href="#about">About</a>
-                    </li> -->
-                    <li>
-                        <a href="#free">Claim your username for FREE</a>
-                    </li>
-                    <!-- <li>
-                        <a href="#contact">Contact</a>
-                    </li> -->
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-
-    <!-- Header -->
-    <a name="about"></a>
-    <div class="intro-header">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h3>Get your FREE</h3>
-                        <h1>personal landing page</h1><br>
-                        <h3>in just 2 minutes by chatting with our </h3><br>
-                        <!-- <h1 style="color:CORNFLOWERBLUE">professional YOU</h1><br> -->
-                        <h1>friendly bot 😎 </h1>
-                        <!-- <hr class="intro-divider"> -->
-                        
-                        <!-- <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                            </li>
-                        </ul> -->
-
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.intro-header -->
-
-    <!-- Page Content -->
-
-
-    <div class="content-section-0">
-
-        <div class="container">
-            <br><br>
-            <div class="row">
-                <h3>Here's how some creative people are using their <kbd>0nline</kbd> profiles</h3>
-                <br><br>
-
-                <div class="col-lg-3">
-                    <a class="hint--bottom hint--error hint--bounce" target='_blank' aria-label="Click to see devika's complete profile at 0nl.in/e/devika" href="http://0nl.in/e/devika">
-                        <img class="img-responsive" src="img/profiles/devika_vertical.png" alt="">
-                    </a>
-                </div>
-
-                <div class="col-lg-3">
-                    <a class="hint--bottom hint--info hint--bounce" target='_blank' aria-label="Arnav is online @ 0nl.in/e/arnav" href="http://0nl.in/e/arnav">
-                        <img class="img-responsive" src="img/profiles/arnav_vertical.png" alt="">
-                    </a>
-                </div>
-
-                <div class="col-lg-3">
-                    <a class="hint--bottom hint--warning hint--bounce" target='_blank' aria-label="Book a meeting with Sahiba at 0nl.in/e/sahiba" href="http://0nl.in/e/sahiba">
-                        <img class="img-responsive" src="img/profiles/shiba_vertical.png" alt="">
-                    </a>
-                </div>
-
-                <div class="col-lg-3">
-                    <a class="hint--bottom hint--success hint--bounce" target='_blank' aria-label="Follow me @ 0nl.in/e/sauravtom" href="http://0nl.in/e/sauravtom">
-                        <img class="img-responsive" src="img/profiles/saurav_vertical.png" alt="">
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-
-        <br><br><br>
-
-        <div class="banner">
-
-            <div class="container">
-
-                <div class="row">
-                    <h2>Why create an <code>0nline</code> profile ?</h2>
-                </div>
-
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /.banner -->
-
-
-
-
-	<a  name="services"></a>
-    <div class="content-section-a">
-
-        <div class="container">
-            <div class="row">
-                
-
-                <div class="col-lg-5 col-sm-6">
-                    <!-- <hr class="section-heading-spacer">
-                    <div class="clearfix"></div> -->
-                    <h2 class="section-heading">1. Handcrafted by an AI bot</h2>
-                    <p class="lead">We will make a web page that rhymes with your personality, and sings the story of your life</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="http://i.giphy.com/26BREmJeDHcIerhQs.gif" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-
-
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <!-- <hr class="section-heading-spacer">
-                    <div class="clearfix"></div> -->
-                    <h2 class="section-heading">2. Create smart redirects 🔮</h2>
-                    <p class="lead">Simplify complex urls in short customizable urls to linkedin, resume, and even  a skype call</p>
-                    <p>No need to remember long confusing urls</p>
-                    <p><small>*coming soon*</small></p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/demo/3.gif" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-b -->
-
-
-
-    <div class="content-section-a">
-
-        <div class="container">
-            <div class="row">
-                
-
-                <div class="col-lg-5 col-sm-6">
-                    <!-- <hr class="section-heading-spacer">
-                    <div class="clearfix"></div> -->
-                    <h2 class="section-heading">3. Publish Blog posts easily 💻</h2>
-                    <p class="lead">By sending a email to <code>{your-username}@0nl.in</code>, from your registered email address, you can easily publish blogposts</p>
-                    <p><small>*coming soon*</small></p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/demo/2.gif" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-
-
-
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <!-- <hr class="section-heading-spacer">
-                    <div class="clearfix"></div> -->
-                    <h2 class="section-heading">4. Evolving Web Pages 📲</h2>
-                    <p class="lead">Your best performing freshest tweets and instagram photos embedded on your profile <small>(with your permission)</small></p>
-                    <p><small>*coming soon*</small></p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="http://i.giphy.com/3o6ZtoMriY46ee6vW8.gif" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-b -->
-
-
-    <div class="content-section-a">
-
-        <div class="container">
-            <div class="row">
-                
-
-                <div class="col-lg-5 col-sm-6">
-                    <!-- <hr class="section-heading-spacer">
-                    <div class="clearfix"></div> -->
-                    <h2 class="section-heading">5. Curate ideas and nice things with #iList 📖</h2>
-                    <p class="lead">Simply comment/tweet anywhere on the web with hashtag <kbd>#iList</kbd> to activate the <strong>iList PinBoard</strong> on your <code>0nline</code> profile <small>(Social account connection required)</small></p>
-                    <p><small>*coming soon*</small></p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/demo/4.gif" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-
-
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <!-- <hr class="section-heading-spacer">
-                    <div class="clearfix"></div> -->
-                    <h2 class="section-heading">6. Beautiful Web Page 🌟👌</h2>
-                    <p class="lead">Beautiful page templates, formatted for every device, so you always look great 😊</p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/mockup.gif" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-b -->
-
-
-    <div class="content-section-b">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h2> You too can create your own <code>0nline</code> profile page </h2><br>
-                    <p>within minutes, by chatting with <a href="https://m.me/0nlinebot" target='_blank'><kbd>0nline<kbd/> bot </a> </p>
-                </div>
-                <div class="col-lg-4">
-                    <img class="img-responsive" src="img/demo/5_bot.gif" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-    </div>
-
-
-	<a  name="free"></a>
-    <div class="banner">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Book your <code>0nline</code> username today !!</h2>
-                    <br>
-                    <h3>FREE !! No credit card required</h3>
-                    <br>
-                    <h4>👉🏻   <a href="https://m.me/0nlinebot" target='_blank'> <code>www.0nl.in/e/YOU</code> </a>👈🏻</h4>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://m.me/0nlinebot" target='_blank' class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Message Me</span></a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.banner -->
-
-    <!-- MODALS DATA -->
-
-    <div class="modal fade team" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-                    <h1 class='center'><kbd>0nline</kbd> Team</h2>
-                        <img class='center' width='300px' src='http://i.giphy.com/9XOKADgcuaady.gif'>
-                    <br><br>
-                    <p>
-                        <a href="http://0nl.in/e/sauravtom" target='_blank'><strong>Saurav Tomar</strong></a> : 2x entrepreneur, Product guy and hacker. Overviews tech and handles operations @<a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/sauravtom' target='_blank'>0nl.in/e/sauravtom</a>
-                    </p>
-                    <br>
-                    <p>
-                        <a href="http://http://0nl.in/e/abshk"><strong>Abhishek Sukumar</strong></a> : Marketing and content writing @ <a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/abshk' target='_blank'>0nl.in/e/abshk</a>
-                    </p>
-                    <br>
-                    <p>
-                        <a href="http://http://0nl.in/e/mayank26saxena"><strong>Mayank Saxena</strong></a> : Serial bot maker, passionate about conversational UI & open source| Chief Bot Officer @ <a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/mayank26saxena' target='_blank'>0nl.in/e/mayank26saxena</a>
-                    </p>
-                    <br>
-                    <p>
-                        <a href="http://http://0nl.in/e/mayank26saxena"><strong>Satwik Kansal</strong></a> : Pythonista and passionate about Artificial Intelligence and making personality based chatbots| Chief AI Engineer @ <a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/satwik' target='_blank'>0nl.in/e/satwik</a>
-                    </p>
-                    <br>
-                    <p>
-                        <a href="http://http://0nl.in/e/mayank26saxena"><strong>Gautam Prajapati</strong></a> : is responsible for Building and scaling APIs and making sure that <a href='http://0nl.in' target='_blank'><code>0nline</code></a> is always ... online. <small>Also the only person to have a single character username on <code>0nline</code>😎</small> | Backend Engineer Engineer @ <a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/g' target='_blank'>0nl.in/e/g</a>
-                    </p>
-                    <br>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade privacy-policy" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-                    <h1>PRIVACY POLICY STATEMENT</h2>
-                    <p><br><br>
-
-                        <strong>SECTION 1 - WHAT DO WE DO WITH YOUR INFORMATION?</strong><br><br>
-
-                        When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.<br>
-
-                        When you browse our store, we also automatically receive your computer’s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.<br>
-
-                        Email marketing (if applicable): With your permission, we may send you emails about our store, new products and other updates.<br><br>
-
-
-                        <strong>SECTION 2 - CONSENT</strong><br><br>
-
-                        How do you get my consent?<br>
-
-                        When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.<br>
-
-                        If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.<br>
-
-
-                        How do I withdraw my consent?<br>
-
-                        If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at stomatrix@gmail.com or mailing us at: 0nline I-2/8, Rohini Sector 16, New Delhi, India 110085, New Delhi, DL, 110085, India<br>
-
-
-                        <strong>SECTION 3 - DISCLOSURE</strong><br><br><br>
-
-                        We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.<br>
-
-
-                        <strong>Payment:</strong><br><br>
-
-                        If you choose a direct payment gateway to complete your purchase, then Shopify stores your credit card data. It is encrypted through the Payment Card Industry Data Security Standard (PCI-DSS). Your purchase transaction data is stored only as long as is necessary to complete your purchase transaction. After that is complete, your purchase transaction information is deleted.<br>
-
-                        All direct payment gateways adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover.<br>
-
-                        PCI-DSS requirements help ensure the secure handling of credit card information by our store and its service providers.<br>
-
-                        For more insight, you may also want to read Shopify’s Terms of Service here or Privacy Statement here.<br><br>
-
-
-                        <strong>SECTION 5 - THIRD-PARTY SERVICES</strong><br><br>
-
-
-                        In general, the third-party providers used by us will only collect, use and disclose your information to the extent necessary to allow them to perform the services they provide to us.<br><br>
-
-                        However, certain third-party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies in respect to the information we are required to provide to them for your purchase-related transactions.<br>
-
-                        For these providers, we recommend that you read their privacy policies so you can understand the manner in which your personal information will be handled by these providers.<br>
-
-                        In particular, remember that certain providers may be located in or have facilities that are located in a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.<br><br>
-
-                        As an example, if you are located in Canada and your transaction is processed by a payment gateway located in the United States, then your personal information used in completing that transaction may be subject to disclosure under United States legislation, including the Patriot Act.<br>
-
-                        Once you leave our store’s website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our website’s Terms of Service.<br><br>
-
-
-                        Links<br>
-
-                        When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.<br>
-
-
-                        <strong>SECTION 6 - SECURITY</strong><br><br>
-
-                        To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.<br>
-
-                        If you provide us with your credit card information, the information is encrypted using secure socket layer technology (SSL) and stored with a AES-256 encryption.  Although no method of transmission over the Internet or electronic storage is 100% secure, we follow all PCI-DSS requirements and implement additional generally accepted industry standards.<br>
-
-
-                        <strong>COOKIES</strong><br><br>
-
-                        Here is a list of cookies that we use. We’ve listed them here so you can choose if you want to opt-out of cookies or not.<br>
-
-                        _session_id, unique token, sessional, Allows Shopify to store information about your session (referrer, landing page, etc).<br><br>
-
-                        _shopify_visit, no data held, Persistent for 30 minutes from the last visit, Used by our website provider’s internal stats tracker to record the number of visits<br>
-
-                        _shopify_uniq, no data held, expires midnight (relative to the visitor) of the next day, Counts the number of visits to a store by a single customer.<br>
-
-                        cart, unique token, persistent for 2 weeks, Stores information about the contents of your cart.<br>
-
-                        _secure_session_id, unique token, sessional<br>
-
-                        storefront_digest, unique token, indefinite If the shop has a password, this is used to determine if the current visitor has access.<br>
-
-
-
-                        <strong>SECTION 7 - AGE OF CONSENT</strong><br><br>
-
-                        By using this site, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.<br><br>
-
-
-                        <strong>SECTION 8 - CHANGES TO THIS PRIVACY POLICY</strong><br><br>
-
-                        We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.<br>
-
-                        If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.<br>
-
-
-                        <strong>QUESTIONS AND CONTACT INFORMATION</strong><br>
-
-                        If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at stomatrix@gmail.com or by mail at 0nline<br>
-
-                        [Re: Privacy Compliance Officer]<br>
-
-                        [I-2/8, Rohini Sector 16, New Delhi, India 110085, New Delhi, DL, 110085, India]<br>
-
-                        ----
-
-                    </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade terms-of-use" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-                    <h1>Terms and Conditions ("Terms")</h1>
-                    <p>Last updated: August 01, 2016</p>
-                    <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the http://0nl.in website (the "Service") operated by 0nline ("us", "we", or "our").</p>
-                    <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
-                    <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
-                    <p><strong>Accounts</strong></p>
-                    <p>When you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.</p>
-                    <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service.</p>
-                    <p>You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
-                    <p><strong>Links To Other Web Sites</strong></p>
-                    <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by 0nline.</p>
-                    <p>0nline has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that 0nline shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
-                    <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.</p>
-                    <p><strong>Termination</strong></p>
-                    <p>We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
-                    <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
-                    <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
-                    <p>Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.</p>
-                    <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
-                    <p><strong>Governing Law</strong></p>
-                    <p>These Terms shall be governed and construed in accordance with the laws of Delhi, India, without regard to its conflict of law provisions.</p>
-                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.</p>
-                    <p><strong>Changes</strong></p>
-                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
-                    <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
-                    <p><strong>Contact Us</strong></p>
-                    <p>If you have any questions about these Terms, please contact us.</p>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade faq" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-                    <h1>Frequently Asked Questions</h1>
-        </div>
-      </div>
-    </div>
-
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <!-- <li>
-                            <a href="/blog">Blog</a>
-                        </li> -->
-                        <li>
-                            <a data-toggle="modal" data-target=".team"> 🌟 Team 🌟</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a data-toggle="modal" data-target=".privacy-policy">Privacy Policy</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a data-toggle="modal" data-target=".terms-of-use">Terms of Use</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <!-- <li>
-                            <a data-toggle="modal" data-target=".faq">FAQs</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li> -->
-                        <li>
-                            <a href="mailto:stomatrix@gmail.com?Subject=Hi Saurav">Contact</a>
-                        </li>
-                        
-                        
-                        
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; 0nline 2016. All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css"> -->
 
         
-        <style>
-            #fb_widget .label{position:relative;float:left;color:#005f46;min-width:20%}
-            #fb_widget .field{position:relative;float:left}
-            #fb_widget .element{border:0 dotted red;margin:12px;padding:5px;min-height:25px;clear:both}
-            #fb_widget .field input{margin:0;padding:0}
-            #fb_link.disabled{opacity:0;visibility:hidden;}#fb_link.disabled .tooltiptext{font-size:0}
-            #fb_link.disabled .tooltiptext:after{content:"OFFLINE";font-size:12px}
-            #fb_link.email_us .tooltiptext{font-size:0}
-            #img_email{display:none;}
-            #fb_link.email_us .tooltiptext:after{content:"EMAIL US";font-size:12px}
-            .fbmessenger{position:fixed;bottom:15px;right:15px;z-index:999999999}
-            .fbmessenger span{z-index:999999999;position: absolute;}
-            .fbmessenger.wpostop_left{left:2px;right:initial;top:0;bottom:initial}
-            .tooltiptext.wpostop_left{left:60px;right:initial;top:8px;bottom:initial}
-            .fbmessenger.wpostop_right{left:initial;right:15px;top:0;bottom:initial}
-            .tooltiptext.wpostop_right{left:initial;right:60px;top:8px;bottom:initial}
-            .fbmessenger.wposbottom_left{left:2px;right:initial;top:initial;bottom:0}
-            .tooltiptext.wposbottom_left{left:60px;right:initial;top:initial;bottom:10px}
-            .fbmessenger.wposbottom_right{left:initial;right:15px;top:initial;bottom:0}
-            .tooltiptext.wposbottom_right{left:initial;right:60px;top:initial;bottom:10px}
-            .fbmessenger img{width:50px;filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3));-webkit-filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3))}
-            .tooltiptext{width:120px;background-color:#fff;color:#2c2c2c;text-align:center;padding:5px 0;border:1px solid #eee;border-radius:6px;position:fixed;bottom:30px;right:75px;font-family:inherit;font-size:inherit;text-transform:uppercase;filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3));-webkit-filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3))}
+
+<style type="text/css">
+	
+	@font-face {
+	  font-family: "proxima-nova";
+	  src: local('fonts/proxima-nova/proximanova-semibold-webfont.ttf') format("truetype");
+	}
+	body{
+		font-family: "proxima-nova", sans-serif;
+	}
+
+	.title{
+		font-weight: bolder;
+		text-align: justify;
+		color: black;
+	}
+
+	.summary{
+		color: black;
+		font-size: 15px;
+		text-align: justify;
+	}
+	.screen{
+		background: black;
+	}
+	.screen::-webkit-scrollbar { 
+	    display: none; 
+	}
+	.narrator{
+		color: purple;
+		font-size: 12px;
+		text-align: left;
+	}
+	
+	.desc1{
+		font-size: 27px;
+		color: purple;
+	}
+	.desc2{
+		font-size: 15px;
+	}
+	.desc3{
+		font-size: 15px;
+		background: white;
+		border-radius: 10px;
+		padding:7px;
+		opacity: 0.5;
+	}
+	#next{
+		position: fixed;
+		top:50%;
+		right: 5px;
+	}
+	#vertical_video{
+		width: 100%;
+		height: 100%;
+		border: 2px black dashed;
+	}
+	#mobile{
+		height: auto;
+	}
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+
+        <style type="text/css">
+            .cf{
+                width: 100%;
+                text-align: center;
+            }
+            .left{
+            	//background-image: url('http://i.imgur.com/rpjnQQU.jpg');
+            	//background-size: 100%;
+            }
+            #img_msg{
+            	width:200px;
+            	height: auto;
+            }
+            #right-image{
+            	width: 400px;
+            }
+            h1{
+            	font-weight: bolder;
+            }
+
+            .btn {
+            	font-family: "proxima-nova", sans-serif;
+              -webkit-border-radius: 7;
+              -moz-border-radius: 7;
+              -webkit-box-shadow: 0px 1px 2px #666666;
+                -moz-box-shadow: 0px 1px 3px #666666;
+                box-shadow: 0px 1px 2px #666666;
+
+              border-radius: 7px;
+              color: #ffffff;
+              font-size: 20px;
+              background: #0179FF;
+              padding: 10px 20px 10px 20px;
+              border: none;
+              cursor: pointer;
+             	
+            }
+            .pad{
+
+            }
+            .imagelogo{
+            	width: 100px !important;
+            	height: auto !important;
+            }
+
         </style>
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+        <style type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></style>
+
+    </head>
+    <body class="animated fadeIn">
+
+      <div class="container cf">
+
+        <div class="col col-1-2 left">
+
+          <div class="content animated fadeIn delayed">
+            <div>
+                <img src="http://i.imgur.com/yyHo1Wp.png" class="imagelogo" alt="logo 0NLINE">
+            
+                <h1>A chatbot which will help you find a job you'll love 😍</h1>
+                
+                <br>
+                <p class='desc2'>Apply to jobs at </p>
+                <h5 class='typing'></h5>
+
+                <br><br>
+                <p class='pad'></p>
+
+                <div class='code'>
+                  <a id="fb_link" href="http://m.me/0nlinebot" target="_blank" class="" style="display: inline;">
+                      <div class="fbmessenger wposbottom_left">
+
+                      	<img id="img_msg" src="https://hipstercatbot.files.wordpress.com/2016/06/fb-message-us-small.png">
+
+                      	<img id="img_email" src="https://supple.com.au/wp-content/themes/supple/img/emailc.png" style="display: none;">
+                         
+                  </div>
+                  </a>
+                 </div>
+                <!--Facebook Chat Widget - Made by Supple Solutions - https://supple.com.au/tools/facebook-messenger-website-chat-widget/ -->
+
+
+            </div>
+            
+          </div>
+
+          <div class="footer">
+            <!-- <a class="twitter" target='_blank' href="https://medium.com/@sauravtom/okay-let-s-talk-about-bitcoin-ae3a94c6550c#.w4vmmn8z7">About</a> -->
+            
+            <!-- <a href="#">🌟  Team 🌟</a> -->
+            <a target='_blank' href="https://medium.com/@0nlinebot">Blog</a>
+            <!-- <a class="support" href="#">T & C</a> -->
+          </div>
+
+        </div>
+
+        <div class="col col-1-2 right">
+          <div class="content animated fadeIn delayed">
+
+          	<img id='right-image' src="http://hireluther.com/wp-content/uploads/2016/04/Image_one-2.png">
+
+            <h1>Hire top tech talent, faster.</h1><br>
+            <p class='desc3'>Get matched with the right candidates, identified by algorithms, curated by humans & ready to interview.</p>
+            <br><br><br>
+            
+            <a href='https://stomatrix.typeform.com/to/zGp6h2' target='_blank'>
+            	<button class='btn'>Start Hiring today</button>
+          	</a>
+
+
+          </div>
+
+          <div class="footer">
+            <!-- <a class="legal" href="#">More info</a> -->
+          </div>
+
+        </div>
+      </div>
+
+
+      	
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+
+        
+
+        <script type="text/javascript">
+        		!function(){function t(){}function e(t){return o.retinaImageSuffix+t}function i(t,i){if(this.path=t||"","undefined"!=typeof i&&null!==i)this.at_2x_path=i,this.perform_check=!1;else{if(void 0!==document.createElement){var a=document.createElement("a");a.href=this.path,a.pathname=a.pathname.replace(s,e),this.at_2x_path=a.href}else{var n=this.path.split("?");n[0]=n[0].replace(s,e),this.at_2x_path=n.join("?")}this.perform_check=!0}}function a(t){this.el=t,this.path=new i(this.el.getAttribute("src"),this.el.getAttribute("data-at2x"));var e=this;this.path.check_2x_variant(function(t){t&&e.swap()})}var n="undefined"==typeof exports?window:exports,o={retinaImageSuffix:"@2x",check_mime_type:!0,force_original_dimensions:!0};n.Retina=t,t.configure=function(t){null===t&&(t={});for(var e in t)t.hasOwnProperty(e)&&(o[e]=t[e])},t.init=function(t){null===t&&(t=n),t.addEventListener("load",function(){var t,e,i=document.getElementsByTagName("img"),n=i.length,o=[];for(t=0;n>t;t+=1)e=i[t],e.getAttributeNode("data-no-retina")||e.src&&o.push(new a(e))})},t.isRetina=function(){var t="(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";return n.devicePixelRatio>1?!0:n.matchMedia&&n.matchMedia(t).matches?!0:!1};var s=/\.[\w\?=]+$/;n.RetinaImagePath=i,i.confirmed_paths=[],i.prototype.is_external=function(){return!(!this.path.match(/^https?\:/i)||this.path.match("//"+document.domain))},i.prototype.check_2x_variant=function(t){var e,a=this;return this.perform_check||"undefined"==typeof this.at_2x_path||null===this.at_2x_path?this.at_2x_path in i.confirmed_paths?t(!0):this.is_external()?t(!1):(e=new XMLHttpRequest,e.open("HEAD",this.at_2x_path),e.onreadystatechange=function(){if(4!==e.readyState)return t(!1);if(e.status>=200&&e.status<=399){if(o.check_mime_type){var n=e.getResponseHeader("Content-Type");if(null===n||!n.match(/^image/i))return t(!1)}return i.confirmed_paths.push(a.at_2x_path),t(!0)}return t(!1)},void e.send()):t(!0)},n.RetinaImage=a,a.prototype.swap=function(t){function e(){i.el.complete?(o.force_original_dimensions&&(0==i.el.offsetWidth&&0==i.el.offsetHeight?(i.el.setAttribute("width",i.el.naturalWidth),i.el.setAttribute("height",i.el.naturalHeight)):(i.el.setAttribute("width",i.el.offsetWidth),i.el.setAttribute("height",i.el.offsetHeight))),i.el.setAttribute("src",t)):setTimeout(e,5)}"undefined"==typeof t&&(t=this.path.at_2x_path);var i=this;e()},t.isRetina()&&t.init(n)}(),$("#subForm").submit(function(t){t.preventDefault(),$.getJSON(this.action+"?callback=?",$(this).serialize(),function(t){400===t.Status?($(".error").remove(),$("#subForm").append('<span class="error">Oops. This doesn\'t look like a valid email address.</span>')):($("#subForm").html("Thanks for signing up, you're awesome! Please check your inbox."),$("#subForm").addClass("green"))})}),$(document).ready(function(){var t=0+Math.floor(-100*Math.random());$(".right").css("-webkit-animation-delay",t+"s"),$(".legal").on("click",function(){$(".overlay").toggleClass("none"),$(".legal-scroll").toggleClass("fadeInUp").toggleClass("fadeOutDown"),$("html").addClass("no-scroll")}),$(".overlay").on("click",function(){$(this).toggleClass("none"),$(".legal-scroll").toggleClass("fadeOutDown").toggleClass("fadeInUp"),$("html").removeClass("no-scroll")}),$(".close").on("click",function(){$(".overlay").toggleClass("none"),$(".legal-scroll").toggleClass("fadeOutDown").toggleClass("fadeInUp"),$("html").removeClass("no-scroll")}),$(".legal-scroll").click(function(t){t.stopPropagation()})});
+        </script>
+        
+        
+
+
+        <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        
+        <script type="text/javascript" src='js/jquery.modal.min.js'></script>
+
         <script type="text/javascript">
                     $.noConflict();
-                var ot = Array();
-                ot['mon']='12:00 AM-11:59 PM';
-                ot['tue']='12:00 AM-11:59 PM';
-                ot['wed']='12:00 AM-11:59 PM';
-                ot['thu']='12:00 AM-11:59 PM';
-                ot['fri']='12:00 AM-11:59 PM';
-                ot['sat']='12:00 AM-11:59 PM';
-                ot['sun']='12:00 AM-11:59 PM';
-                var tz = '+05:30,0';
-                var widget_position = 'bottom_left';
-                var fb = '0nlinebot';
-                var fb_email = '';
-                var emailLink = false;
-                var mon = true;
-                var tue = true;
-                var wed = true;
-                var thu = true;
-                var fri = true;
-                var sat = true;
-                var sun = true;
-                function calculate_time_zone(ch){
-                      if (typeof ch == "undefined") ch = false;
-                      var rightNow = new Date();
-                      var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);  /* jan 1st */
-                      var june1 = new Date(rightNow.getFullYear(), 6, 1, 0, 0, 0, 0); /* june 1st */
-                      var temp = jan1.toGMTString();
-                      var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
-                      temp = june1.toGMTString();
-                      var june2 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
-                      var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
-                      var daylight_time_offset = (june1 - june2) / (1000 * 60 * 60);
-                      var dst;
-                      if (std_time_offset == daylight_time_offset) {
-                         dst = "0"; /* daylight savings time is NOT observed */
-                      } else {
-                         /* positive is southern, negative is northern hemisphere */
-                         var hemisphere = std_time_offset - daylight_time_offset;
-                         if (hemisphere >= 0)
-                            std_time_offset = daylight_time_offset;
-                         dst = "1"; /* daylight savings time is observed */
-                      }
-                      var i;
-                      /* check just to avoid error messages */
-                      var con = convert(std_time_offset)+","+dst;
-                      if (ch && document.getElementById('timezone')) {
-                         for (i = 0; i < document.getElementById('timezone').options.length; i++) {
-                            if (document.getElementById('timezone').options[i].value == con) {
-                               document.getElementById('timezone').selectedIndex = i;
-                               break;
-                            }
-                         }
-                      }
-                      return con;}
-                function linkHandler(e){
-                    var is_online = validate();
-                    if (is_online){
-                        e.preventDefault();
-                        var screenwidth = screen.width-500;
-                        window.open(jQuery(this).attr('href'), '_blank',"width=500,height=800,left="+screenwidth);
-                    }else{
-                      if (jQuery("#chk_showemaillink").is(':checked') && jQuery("#fb_email").length > 0){
-                        var fb_email = jQuery("#fb_email").val();
+		                var ot = Array();
+		                ot['mon']='12:00 AM-11:59 PM';
+		                ot['tue']='12:00 AM-11:59 PM';
+		                ot['wed']='12:00 AM-11:59 PM';
+		                ot['thu']='12:00 AM-11:59 PM';
+		                ot['fri']='12:00 AM-11:59 PM';
+		                ot['sat']='12:00 AM-11:59 PM';
+		                ot['sun']='12:00 AM-11:59 PM';
+		                var tz = '+05:30,0';
+		                var widget_position = 'bottom_left';
+		                var fb = '0nlinebot';
+		                var fb_email = '';
+		                var emailLink = false;
+		                var mon = true;
+		                var tue = true;
+		                var wed = true;
+		                var thu = true;
+		                var fri = true;
+		                var sat = true;
+		                var sun = true;
+		                function calculate_time_zone(ch){
+		                      if (typeof ch == "undefined") ch = false;
+		                      var rightNow = new Date();
+		                      var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);  /* jan 1st */
+		                      var june1 = new Date(rightNow.getFullYear(), 6, 1, 0, 0, 0, 0); /* june 1st */
+		                      var temp = jan1.toGMTString();
+		                      var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
+		                      temp = june1.toGMTString();
+		                      var june2 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
+		                      var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
+		                      var daylight_time_offset = (june1 - june2) / (1000 * 60 * 60);
+		                      var dst;
+		                      if (std_time_offset == daylight_time_offset) {
+		                         dst = "0"; /* daylight savings time is NOT observed */
+		                      } else {
+		                         /* positive is southern, negative is northern hemisphere */
+		                         var hemisphere = std_time_offset - daylight_time_offset;
+		                         if (hemisphere >= 0)
+		                            std_time_offset = daylight_time_offset;
+		                         dst = "1"; /* daylight savings time is observed */
+		                      }
+		                      var i;
+		                      /* check just to avoid error messages */
+		                      var con = convert(std_time_offset)+","+dst;
+		                      if (ch && document.getElementById('timezone')) {
+		                         for (i = 0; i < document.getElementById('timezone').options.length; i++) {
+		                            if (document.getElementById('timezone').options[i].value == con) {
+		                               document.getElementById('timezone').selectedIndex = i;
+		                               break;
+		                            }
+		                         }
+		                      }
+		                      return con;}
+		                function linkHandler(e){
+		                    var is_online = validate();
+		                    if (is_online){
+		                        e.preventDefault();
+		                        var screenwidth = screen.width-500;
+		                        window.open(jQuery(this).attr('href'), '_blank',"width=500,height=800,left="+screenwidth);
+		                    }else{
+		                      if (jQuery("#chk_showemaillink").is(':checked') && jQuery("#fb_email").length > 0){
+		                        var fb_email = jQuery("#fb_email").val();
 
-                        if (fb_email!="" && isEmail(fb_email) && jQuery("#fb_link").hasClass("email_us")){
-                            jQuery(this).attr('href',"mailto:"+fb_email);
-                            jQuery(this).attr('target','_self');
-                        }else{
-                            e.preventDefault();
-                            var screenwidth = screen.width-500;
-                            window.open(jQuery(this).attr('href'), '_blank',"width=500,height=800,left="+screenwidth);
-                        }
-                      }else if (emailLink) {
-                            console.log(this);
-                      }else if ( jQuery(this).hasClass("disabled")) {
-                            e.preventDefault();
-                      }
-                    }}
-                function convert(value){
-                    var hours = parseInt(value);
-                    value -= parseInt(value);
-                    value *= 60;
-                    var mins = parseInt(value);
-                    value -= parseInt(value);
-                    value *= 60;
-                    var secs = parseInt(value);
-                    var display_hours = hours;
-                    /* handle GMT case (00:00) */
-                    if (hours == 0) {
-                        display_hours = "00";
-                    } else if (hours > 0) {
-                        /* add a plus sign and perhaps an extra 0 */
-                        display_hours = (hours < 10) ? "+0"+hours : "+"+hours;
-                    } else {
-                        /* add an extra 0 if needed */
-                        display_hours = (hours > -10) ? "-0"+Math.abs(hours) : hours;
-                    }
-                    mins = (mins < 10) ? "0"+mins : mins;
-                    return display_hours+":"+mins;}
-                function validate(){
-                    /*console.clear();*/
-                    if (jQuery("#fb_url").length >0 ){
-                      fb = jQuery("#fb_url").val();
-                    }
-                    if (fb==""){
-                      sweetAlert("Oops...", "Something went wrong!", "error");
-                        return false;
-                    }
-                    if (jQuery("#chk_mon").length > 0 ){
-                      mon = jQuery("#chk_mon").is(":checked");
-                      tue = jQuery("#chk_tue").is(":checked");
-                      wed = jQuery("#chk_wed").is(":checked");
-                      thu = jQuery("#chk_thu").is(":checked");
-                      fri = jQuery("#chk_fri").is(":checked");
-                      sat = jQuery("#chk_sat").is(":checked");
-                      sun = jQuery("#chk_sun").is(":checked");
-                    }
-                   var cDate = new Date();
+		                        if (fb_email!="" && isEmail(fb_email) && jQuery("#fb_link").hasClass("email_us")){
+		                            jQuery(this).attr('href',"mailto:"+fb_email);
+		                            jQuery(this).attr('target','_self');
+		                        }else{
+		                            e.preventDefault();
+		                            var screenwidth = screen.width-500;
+		                            window.open(jQuery(this).attr('href'), '_blank',"width=500,height=800,left="+screenwidth);
+		                        }
+		                      }else if (emailLink) {
+		                            console.log(this);
+		                      }else if ( jQuery(this).hasClass("disabled")) {
+		                            e.preventDefault();
+		                      }
+		                    }}
+		                function convert(value){
+		                    var hours = parseInt(value);
+		                    value -= parseInt(value);
+		                    value *= 60;
+		                    var mins = parseInt(value);
+		                    value -= parseInt(value);
+		                    value *= 60;
+		                    var secs = parseInt(value);
+		                    var display_hours = hours;
+		                    /* handle GMT case (00:00) */
+		                    if (hours == 0) {
+		                        display_hours = "00";
+		                    } else if (hours > 0) {
+		                        /* add a plus sign and perhaps an extra 0 */
+		                        display_hours = (hours < 10) ? "+0"+hours : "+"+hours;
+		                    } else {
+		                        /* add an extra 0 if needed */
+		                        display_hours = (hours > -10) ? "-0"+Math.abs(hours) : hours;
+		                    }
+		                    mins = (mins < 10) ? "0"+mins : mins;
+		                    return display_hours+":"+mins;}
+		                function validate(){
+		                    /*console.clear();*/
+		                    if (jQuery("#fb_url").length >0 ){
+		                      fb = jQuery("#fb_url").val();
+		                    }
+		                    if (fb==""){
+		                      sweetAlert("Oops...", "Something went wrong!", "error");
+		                        return false;
+		                    }
+		                    if (jQuery("#chk_mon").length > 0 ){
+		                      mon = jQuery("#chk_mon").is(":checked");
+		                      tue = jQuery("#chk_tue").is(":checked");
+		                      wed = jQuery("#chk_wed").is(":checked");
+		                      thu = jQuery("#chk_thu").is(":checked");
+		                      fri = jQuery("#chk_fri").is(":checked");
+		                      sat = jQuery("#chk_sat").is(":checked");
+		                      sun = jQuery("#chk_sun").is(":checked");
+		                    }
+		                   var cDate = new Date();
 
-                   var days = Array();
+		                   var days = Array();
 
-                   days['mon'] = mon;
-                   days['tue'] = tue;
-                   days['wed'] = wed;
-                   days['thu'] = thu;
-                   days['fri'] = fri;
-                   days['sat'] = sat;
-                   days['sun'] = sun;
-                   var daysName = [];
-                   daysName[1] = "mon";
-                   daysName[2] = "tue";
-                   daysName[3] = "wed";
-                   daysName[4] = "thu";
-                   daysName[5] = "fri";
-                   daysName[6] = "sat";
-                   daysName[7] = "sun";
-                   if (jQuery("#timezone").length>0){
-                      tz = jQuery("#timezone").val();
-                   }
-                   if (jQuery("#widget_position").length>0){
-                      widget_position = jQuery("#widget_position").val();
-                   }
-                   jQuery(".fbmessenger").removeClass().addClass("fbmessenger wpos"+widget_position);
-                   jQuery(".tooltiptext").removeClass().addClass("tooltiptext wpos"+widget_position);
-                   jQuery("#fb_link").attr("href", "http://m.me/"+fb);
-                   var cDayofWeek = daysName[cDate.getDay()];
-                   jQuery("#fb_link").removeClass("disabled");
-                   var calculated_time_zone = calculate_time_zone();
-                   var baseTzSy = tz.substr(0,1);
-                   var baseTzHr = tz.slice(0, tz.indexOf(":"));
-                   var baseTzMn = tz.substr(tz.indexOf(":")+1,2);
-                   var baseTzDs = tz.slice(-1);
-                   var clientTzDs = calculated_time_zone.slice(-1);
-                   if (baseTzSy=="0") baseTzSy="";
-                   if (baseTzSy=="+") baseTzHr = baseTzHr.substr(1);
-                   var conTz = parseInt(baseTzHr) + parseFloat(baseTzMn/60);
-                   var baseTime = calcTime(conTz, conTz);
-                   var baseDayofWeek = baseTime.getDay();
+		                   days['mon'] = mon;
+		                   days['tue'] = tue;
+		                   days['wed'] = wed;
+		                   days['thu'] = thu;
+		                   days['fri'] = fri;
+		                   days['sat'] = sat;
+		                   days['sun'] = sun;
+		                   var daysName = [];
+		                   daysName[1] = "mon";
+		                   daysName[2] = "tue";
+		                   daysName[3] = "wed";
+		                   daysName[4] = "thu";
+		                   daysName[5] = "fri";
+		                   daysName[6] = "sat";
+		                   daysName[7] = "sun";
+		                   if (jQuery("#timezone").length>0){
+		                      tz = jQuery("#timezone").val();
+		                   }
+		                   if (jQuery("#widget_position").length>0){
+		                      widget_position = jQuery("#widget_position").val();
+		                   }
+		                   jQuery(".fbmessenger").removeClass().addClass("fbmessenger wpos"+widget_position);
+		                   jQuery(".tooltiptext").removeClass().addClass("tooltiptext wpos"+widget_position);
+		                   jQuery("#fb_link").attr("href", "http://m.me/"+fb);
+		                   var cDayofWeek = daysName[cDate.getDay()];
+		                   jQuery("#fb_link").removeClass("disabled");
+		                   var calculated_time_zone = calculate_time_zone();
+		                   var baseTzSy = tz.substr(0,1);
+		                   var baseTzHr = tz.slice(0, tz.indexOf(":"));
+		                   var baseTzMn = tz.substr(tz.indexOf(":")+1,2);
+		                   var baseTzDs = tz.slice(-1);
+		                   var clientTzDs = calculated_time_zone.slice(-1);
+		                   if (baseTzSy=="0") baseTzSy="";
+		                   if (baseTzSy=="+") baseTzHr = baseTzHr.substr(1);
+		                   var conTz = parseInt(baseTzHr) + parseFloat(baseTzMn/60);
+		                   var baseTime = calcTime(conTz, conTz);
+		                   var baseDayofWeek = baseTime.getDay();
 
 
-                   if (days[daysName[baseDayofWeek]]){
-                      /*Online on Base Day. Check for online time under base timezone*/
-                      if (jQuery('.slider-time:visible').length>0) {
-                         /*Desktop Mode*/
-                         s = jQuery("#ts_container-"+daysName[baseDayofWeek]+" .slider-time").html();
-                         e = jQuery("#ts_container-"+daysName[baseDayofWeek]+" .slider-time2").html();
-                         var start_time = convertTimeFormat(s);
-                         var end_time = convertTimeFormat(e);
-                      }else if (jQuery('#mob_container_time').length>0) {
-                         /*Mobile Mode*/
-                         s = jQuery("#start_time-"+daysName[baseDayofWeek]).val();
-                         e = jQuery("#end_time-"+daysName[baseDayofWeek]).val();
-                         var start_time = convertTimeFormat(s);
-                         var end_time = convertTimeFormat(e);
-                      }else{
-                         /*if validate() was called within widget code*/
-                         var t = ot[daysName[baseDayofWeek]].split("-");
-                         var start_time = convertTimeFormat(t[0]);
-                         var end_time = convertTimeFormat(t[1]);
-                      }
-                      /* Convert the time in HH:MM Format*/
+		                   if (days[daysName[baseDayofWeek]]){
+		                      /*Online on Base Day. Check for online time under base timezone*/
+		                      if (jQuery('.slider-time:visible').length>0) {
+		                         /*Desktop Mode*/
+		                         s = jQuery("#ts_container-"+daysName[baseDayofWeek]+" .slider-time").html();
+		                         e = jQuery("#ts_container-"+daysName[baseDayofWeek]+" .slider-time2").html();
+		                         var start_time = convertTimeFormat(s);
+		                         var end_time = convertTimeFormat(e);
+		                      }else if (jQuery('#mob_container_time').length>0) {
+		                         /*Mobile Mode*/
+		                         s = jQuery("#start_time-"+daysName[baseDayofWeek]).val();
+		                         e = jQuery("#end_time-"+daysName[baseDayofWeek]).val();
+		                         var start_time = convertTimeFormat(s);
+		                         var end_time = convertTimeFormat(e);
+		                      }else{
+		                         /*if validate() was called within widget code*/
+		                         var t = ot[daysName[baseDayofWeek]].split("-");
+		                         var start_time = convertTimeFormat(t[0]);
+		                         var end_time = convertTimeFormat(t[1]);
+		                      }
+		                      /* Convert the time in HH:MM Format*/
 
-                      /*console.log("Current Time on local Machine: " + cDate.getTime()/1000);
-                      console.log("The local time in selected timezone is " + localTime.getTime());*/
-                      /*Time on Client Machine*/
-                      cHrs = cDate.getHours();
-                      cMin = cDate.getMinutes();
+		                      /*console.log("Current Time on local Machine: " + cDate.getTime()/1000);
+		                      console.log("The local time in selected timezone is " + localTime.getTime());*/
+		                      /*Time on Client Machine*/
+		                      cHrs = cDate.getHours();
+		                      cMin = cDate.getMinutes();
 
-                      /* Convert the time in HH:MM Format*/
+		                      /* Convert the time in HH:MM Format*/
 
-                      var osTimeHrs= start_time.slice(0, start_time.indexOf(":"));
-                      var osTimeMins= start_time.substr(start_time.indexOf(":")+1, 2 );
+		                      var osTimeHrs= start_time.slice(0, start_time.indexOf(":"));
+		                      var osTimeMins= start_time.substr(start_time.indexOf(":")+1, 2 );
 
-                      var oeTimeHrs= end_time.slice(0, end_time.indexOf(":"));
-                      var oeTimeMins= end_time.substr(end_time.indexOf(":")+1, 2 );
+		                      var oeTimeHrs= end_time.slice(0, end_time.indexOf(":"));
+		                      var oeTimeMins= end_time.substr(end_time.indexOf(":")+1, 2 );
 
-                      console.log("Online time in base timezone("+daysName[baseDayofWeek]+"): " + osTimeHrs+":"+osTimeMins+" - " + oeTimeHrs+":"+oeTimeMins);
+		                      console.log("Online time in base timezone("+daysName[baseDayofWeek]+"): " + osTimeHrs+":"+osTimeMins+" - " + oeTimeHrs+":"+oeTimeMins);
 
-                      lHrs = baseTime.getHours();
-                      lMin = baseTime.getMinutes();
-                      var startTimeTs = new Date(baseTime.getFullYear(), baseTime.getMonth(), baseTime.getDate(), osTimeHrs, osTimeMins, 0, 0);
-                      startTimeTs = parseInt( (startTimeTs.getTime() )/1000);                       
-                      var endTimeTs = new Date(baseTime.getFullYear(), baseTime.getMonth(), baseTime.getDate(), oeTimeHrs, oeTimeMins, 0, 0);
-                      endTimeTs = parseInt( (endTimeTs.getTime() )/1000);              
+		                      lHrs = baseTime.getHours();
+		                      lMin = baseTime.getMinutes();
+		                      var startTimeTs = new Date(baseTime.getFullYear(), baseTime.getMonth(), baseTime.getDate(), osTimeHrs, osTimeMins, 0, 0);
+		                      startTimeTs = parseInt( (startTimeTs.getTime() )/1000);                       
+		                      var endTimeTs = new Date(baseTime.getFullYear(), baseTime.getMonth(), baseTime.getDate(), oeTimeHrs, oeTimeMins, 0, 0);
+		                      endTimeTs = parseInt( (endTimeTs.getTime() )/1000);              
 
-                      sT = new Date(startTimeTs * 1000);
-                      eT = new Date(endTimeTs * 1000);
-                      /*console.log("Curr Hrs: " +cHrs+" Local Hrs:"+lHrs+ " Start Time: "+startTimeTs + " : "+sT);
-                      console.log("Curr Mins: "+cMin+" Local Mins:"+lMin+ " End Time: "+endTimeTs +" : "+eT);*/
+		                      sT = new Date(startTimeTs * 1000);
+		                      eT = new Date(endTimeTs * 1000);
+		                      /*console.log("Curr Hrs: " +cHrs+" Local Hrs:"+lHrs+ " Start Time: "+startTimeTs + " : "+sT);
+		                      console.log("Curr Mins: "+cMin+" Local Mins:"+lMin+ " End Time: "+endTimeTs +" : "+eT);*/
 
-                      var cTs = parseInt(baseTime.getTime()/1000);
-                      
-                      if ( (cTs >= startTimeTs) && (cTs < endTimeTs) ){
-                         /*console.log("ONLINE");*/
-                         jQuery("#fb_link").removeClass("disabled").removeClass("email_us");
-                         jQuery("#img_email").hide();
-                         jQuery("#img_msg").show();
-                         return true;
-                      }else{
-                         /*console.log("OFFLINE");*/
+		                      var cTs = parseInt(baseTime.getTime()/1000);
+		                      
+		                      if ( (cTs >= startTimeTs) && (cTs < endTimeTs) ){
+		                         /*console.log("ONLINE");*/
+		                         jQuery("#fb_link").removeClass("disabled").removeClass("email_us");
+		                         jQuery("#img_email").hide();
+		                         jQuery("#img_msg").show();
+		                         return true;
+		                      }else{
+		                         /*console.log("OFFLINE");*/
 
-                        if (jQuery("#chk_showemaillink").length > 0){
-                            emailLink = jQuery("#chk_showemaillink").is(':checked');
-                            fb_email = jQuery("#fb_email").val();
-                        }else{
-                            emailLink = emailLink;
-                        }
-                        if (emailLink){
-                            jQuery('#fb_link').attr('href',"mailto:"+fb_email);
-                            jQuery('#fb_link').attr('target','_self');
-                            if (fb_email!="" && isEmail(fb_email) ){ 
-                               jQuery("#fb_link").removeClass("disabled").addClass("email_us");
-                               jQuery("#img_email").show();
-                               jQuery("#img_msg").hide(); 
-                            }else{
-                               jQuery("#img_email").hide();
-                               jQuery("#img_msg").show();
-                            }
-                         }else{
-                             jQuery("#fb_link").addClass("disabled");
-                         }
-                         
-                      }
-                   }else{
-                       /*console.log("OFFLINE");*/
-                       if (jQuery("#chk_showemaillink").length > 0){
-                         emailLink = jQuery("#chk_showemaillink").is(':checked');
-                         fb_email = jQuery("#fb_email").val();
-                       }else{
-                         emailLink = emailLink;
-                       }
-                      if (emailLink){
-                        jQuery('#fb_link').attr('href',"mailto:"+fb_email);
-                        jQuery('#fb_link').attr('target','_self');
-                         if (fb_email!="" && isEmail(fb_email) ){
-                            jQuery("#fb_link").removeClass("disabled").addClass("email_us");
-                            jQuery("#img_email").show();
-                            jQuery("#img_msg").hide();
-                         }else{
-                            jQuery("#img_email").hide();
-                            jQuery("#img_msg").show();
-                         }
-                      }else{
-                            jQuery("#fb_link").addClass("disabled");
-                      }
-                      
-                   }
-                   /*console.log("Current time in base timezone is: "+ (baseTime.toLocaleString()));*/
-                   return false;}
-                function convertTimeFormat(time){
-                  /*Convert the time into HH:MM format*/
-                  var hours = Number(time.match(/^(\d+)/)[1]);
-                  var minutes = Number(time.match(/:(\d+)/)[1]);
-                  var AMPM = time.match(/\s(.*)$/)[1];
-                  if(AMPM == "PM" && hours<12) hours = hours+12;
-                  if(AMPM == "AM" && hours==12) hours = hours-12;
-                  var sHours = hours.toString();
-                  var sMinutes = minutes.toString();
-                  if(hours<10) sHours = "0" + sHours;
-                  if(minutes<10) sMinutes = "0" + sMinutes;
-                  return sHours+":"+sMinutes;}
-                function calcTime(city, offset){
-                    /* create Date object for current location */
-                    d = new Date();
-                    /* convert to msec
-                       add local time zone offset 
-                       get UTC time in msec */
-                    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-                    /* create new Date object for different city
-                       using supplied offset */
-                    nd = new Date(utc + (3600000*offset));
-                    return nd; /* return time as a string */}
-                function isEmail(email){
-                  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                  return regex.test(email);}
+		                        if (jQuery("#chk_showemaillink").length > 0){
+		                            emailLink = jQuery("#chk_showemaillink").is(':checked');
+		                            fb_email = jQuery("#fb_email").val();
+		                        }else{
+		                            emailLink = emailLink;
+		                        }
+		                        if (emailLink){
+		                            jQuery('#fb_link').attr('href',"mailto:"+fb_email);
+		                            jQuery('#fb_link').attr('target','_self');
+		                            if (fb_email!="" && isEmail(fb_email) ){ 
+		                               jQuery("#fb_link").removeClass("disabled").addClass("email_us");
+		                               jQuery("#img_email").show();
+		                               jQuery("#img_msg").hide(); 
+		                            }else{
+		                               jQuery("#img_email").hide();
+		                               jQuery("#img_msg").show();
+		                            }
+		                         }else{
+		                             jQuery("#fb_link").addClass("disabled");
+		                         }
+		                         
+		                      }
+		                   }else{
+		                       /*console.log("OFFLINE");*/
+		                       if (jQuery("#chk_showemaillink").length > 0){
+		                         emailLink = jQuery("#chk_showemaillink").is(':checked');
+		                         fb_email = jQuery("#fb_email").val();
+		                       }else{
+		                         emailLink = emailLink;
+		                       }
+		                      if (emailLink){
+		                        jQuery('#fb_link').attr('href',"mailto:"+fb_email);
+		                        jQuery('#fb_link').attr('target','_self');
+		                         if (fb_email!="" && isEmail(fb_email) ){
+		                            jQuery("#fb_link").removeClass("disabled").addClass("email_us");
+		                            jQuery("#img_email").show();
+		                            jQuery("#img_msg").hide();
+		                         }else{
+		                            jQuery("#img_email").hide();
+		                            jQuery("#img_msg").show();
+		                         }
+		                      }else{
+		                            jQuery("#fb_link").addClass("disabled");
+		                      }
+		                      
+		                   }
+		                   /*console.log("Current time in base timezone is: "+ (baseTime.toLocaleString()));*/
+		                   return false;}
+		                function convertTimeFormat(time){
+		                  /*Convert the time into HH:MM format*/
+		                  var hours = Number(time.match(/^(\d+)/)[1]);
+		                  var minutes = Number(time.match(/:(\d+)/)[1]);
+		                  var AMPM = time.match(/\s(.*)$/)[1];
+		                  if(AMPM == "PM" && hours<12) hours = hours+12;
+		                  if(AMPM == "AM" && hours==12) hours = hours-12;
+		                  var sHours = hours.toString();
+		                  var sMinutes = minutes.toString();
+		                  if(hours<10) sHours = "0" + sHours;
+		                  if(minutes<10) sMinutes = "0" + sMinutes;
+		                  return sHours+":"+sMinutes;}
+		                function calcTime(city, offset){
+		                    /* create Date object for current location */
+		                    d = new Date();
+		                    /* convert to msec
+		                       add local time zone offset 
+		                       get UTC time in msec */
+		                    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+		                    /* create new Date object for different city
+		                       using supplied offset */
+		                    nd = new Date(utc + (3600000*offset));
+		                    return nd; /* return time as a string */}
+		                function isEmail(email){
+		                  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		                  return regex.test(email);}
 
-                jQuery( document ).ready(function($) {
-                    calculate_time_zone(true);
-                    validate();
-                    setInterval(validate, 30000);
-                    $('#fb_link').click(linkHandler);
-                });
+		                jQuery( document ).ready(function($) {
+		                    calculate_time_zone(true);
+		                    validate();
+		                    setInterval(validate, 30000);
+		                    $('#fb_link').click(linkHandler);
+		                });
         </script>
 
-        <div class='code'>
-          <a id="fb_link" href="http://m.me/0nlinebot" target="_blank" class="" style="display: inline;">
-              <div class="fbmessenger wposbottom_left"><img id="img_msg" src="https://supple.com.au/wp-content/themes/supple/img/msg.png"><img id="img_email" src="https://supple.com.au/wp-content/themes/supple/img/emailc.png" style="display: none;">
-                 
-          <span class="tooltiptext wposbottom_left">Get <kbd>0nline</kbd> today</span>
-          </div>
-          </a>
-         </div>
-        <!--Facebook Chat Widget - Made by Supple Solutions - https://supple.com.au/tools/facebook-messenger-website-chat-widget/ -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    
+        <script type="text/javascript" src="js/typed.js"></script>
 
-</body>
+        <script>
+
+        	$(".typing").typed({
+        	  strings: ["Entrepreneur", 'Cereal Entrepreneur ... 🍲?' ,'Serial Entrepreneur' , "Hacker 👀" , "Designer" , "Product Guy 🐮" ,"Public Speaker 🙋" , 'College Dropout 😎', "HackaPreneur"],
+        	  typeSpeed: -1
+        	});
+
+        </script>   
+
+
+    </body>
 
 </html>

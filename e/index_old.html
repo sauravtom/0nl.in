@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>0nl.in/e</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AAAAAAMAAAAZAAAAJgAAACMAAAATAAAAAf///wD///8A////AP///wD///8A////AP///wD///8AAAAAAQAAADUMQ4CBFofy/xia9v8YlvX/FoDu+AMdPWAAAAAl////AP///wD///8A////AP///wD///8AAAAAAwMXM1oaofj/Icn+/yPW/v8k2v7/JNn+/yPQ/v8gv/z/GI70/wAABED///8A////AP///wD///8A////AAUlSGAdsfv/JNj+/yTd/v8k4P7/IuD+/yPg/v8k3f7/JNr+/yPP/v8anvj/AAAANv///wD///8A////AAAAACcbofj/Is3+/yLX/v8m5f7/D0l5/w9Qh/8PTIT/I4ij/yHX/v8i0/7/IcX+/xiI8/8AAAAJ////AP///wASaN3XILv+/yHH/v8i2v7/Ci1S/yTs//8h2P7/Idz+/yTl//8BDTX/H8f+/yDE/v8er/v/ABEiPP///wB/f38CGI/z/yG+/v8gv/7/IMj8/yDJ/P8hz/7/IdH+/yHP/v8hzv7/H8f8/x/D+/8gv/7/ILj+/xN06vj///8AAAAABRyc+P8ou/7/EC47/ysrK/8qKir/E0pd/yjF/v8ow/r/DRES/yoqKv8qKir/H42+/yi6/v8YhPH/AAAAAQAAAAQfn/j/Lrr3/xoaGv8mJib/JiYm/xISEv8vvfn/Fkpe/yAgIP8mJib/JiYm/xMTE/8wu/n/GIfz/wAAAAF/f38BG5P1/w4ODv8pKSn/Kysr/yQkJP8YGBj/Dw8P/w0NDf8lJSX/Kioq/yQkJP8XFxf/HXGY/xV17v7///8A////ABNt6vcMDAz/EhIS/xEREf8dIiT/K01a/2DR/v9awur/KDxD/xkcHv8TExP/CQkJ/w8PD/8NUbc5////AP///wAAAAAFH574/4HZ/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4Ha/v+B2v7/gdr+/4rd/v8YivT/AAAAAv///wD///8A////ABFd4ZIlqfv/oOL+/6Hk/v+h5P7/oeT+/6Hk/v+h5P7/oeT+/6Pi/v8cmff/AAAAA////wD///8A////AP///wD///8AEl/mjxeW9//G7P//vuv//77r//++6///v+z//7nn//8ZjvT/ElvIDv///wD///8A////AP///wD///8A////AP///wD///8AEmnr5BeG8v8Wj/f/Fo73/xeB8P4SX+ar////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAPg/AADwDwAA4AcAAMADAACAAwAAgAEAAIABAACAAQAAgAEAAIADAADAAwAAwAcAAOAPAAD4HwAA//8AAA==" rel="icon" type="image/x-icon" />
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="css/hint.min.css"></link>
+
+    <style type="text/css">
+        code{
+            color: black;
+            background-color: none;
+        }
+        .modal-content{
+            padding: 20px;
+            text-align: justify;
+            font-weight: normal;
+        }
+    </style>
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+ -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Start of Smartsupp Live Chat script -->
+    <script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '16ea6f0b6a1b71b468785c680fd7bd4a58d2c65b';
+    window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand topnav" href="/e/"><h1><code>0nline</code></h1></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li>
+                        <a href="#about">About</a>
+                    </li> -->
+                    <li>
+                        <a href="#free">Claim your username for FREE</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#contact">Contact</a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h3>Get your FREE</h3>
+                        <h1>personal landing page</h1><br>
+                        <h3>in just 2 minutes by chatting with our </h3><br>
+                        <!-- <h1 style="color:CORNFLOWERBLUE">professional YOU</h1><br> -->
+                        <h1>friendly bot 😎 </h1>
+                        <!-- <hr class="intro-divider"> -->
+                        
+                        <!-- <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul> -->
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+
+    <div class="content-section-0">
+
+        <div class="container">
+            <br><br>
+            <div class="row">
+                <h3>Here's how some creative people are using their <kbd>0nline</kbd> profiles</h3>
+                <br><br>
+
+                <div class="col-lg-3">
+                    <a class="hint--bottom hint--error hint--bounce" target='_blank' aria-label="Click to see devika's complete profile at 0nl.in/e/devika" href="http://0nl.in/e/devika">
+                        <img class="img-responsive" src="img/profiles/devika_vertical.png" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a class="hint--bottom hint--info hint--bounce" target='_blank' aria-label="Arnav is online @ 0nl.in/e/arnav" href="http://0nl.in/e/arnav">
+                        <img class="img-responsive" src="img/profiles/arnav_vertical.png" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a class="hint--bottom hint--warning hint--bounce" target='_blank' aria-label="Book a meeting with Sahiba at 0nl.in/e/sahiba" href="http://0nl.in/e/sahiba">
+                        <img class="img-responsive" src="img/profiles/shiba_vertical.png" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a class="hint--bottom hint--success hint--bounce" target='_blank' aria-label="Follow me @ 0nl.in/e/sauravtom" href="http://0nl.in/e/sauravtom">
+                        <img class="img-responsive" src="img/profiles/saurav_vertical.png" alt="">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+        <br><br><br>
+
+        <div class="banner">
+
+            <div class="container">
+
+                <div class="row">
+                    <h2>Why create an <code>0nline</code> profile ?</h2>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.banner -->
+
+
+
+
+	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                
+
+                <div class="col-lg-5 col-sm-6">
+                    <!-- <hr class="section-heading-spacer">
+                    <div class="clearfix"></div> -->
+                    <h2 class="section-heading">1. Handcrafted by an AI bot</h2>
+                    <p class="lead">We will make a web page that rhymes with your personality, and sings the story of your life</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="http://i.giphy.com/26BREmJeDHcIerhQs.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <!-- <hr class="section-heading-spacer">
+                    <div class="clearfix"></div> -->
+                    <h2 class="section-heading">2. Create smart redirects 🔮</h2>
+                    <p class="lead">Simplify complex urls in short customizable urls to linkedin, resume, and even  a skype call</p>
+                    <p>No need to remember long confusing urls</p>
+                    <p><small>*coming soon*</small></p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/demo/3.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+
+
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                
+
+                <div class="col-lg-5 col-sm-6">
+                    <!-- <hr class="section-heading-spacer">
+                    <div class="clearfix"></div> -->
+                    <h2 class="section-heading">3. Publish Blog posts easily 💻</h2>
+                    <p class="lead">By sending a email to <code>{your-username}@0nl.in</code>, from your registered email address, you can easily publish blogposts</p>
+                    <p><small>*coming soon*</small></p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/demo/2.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <!-- <hr class="section-heading-spacer">
+                    <div class="clearfix"></div> -->
+                    <h2 class="section-heading">4. Evolving Web Pages 📲</h2>
+                    <p class="lead">Your best performing freshest tweets and instagram photos embedded on your profile <small>(with your permission)</small></p>
+                    <p><small>*coming soon*</small></p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="http://i.giphy.com/3o6ZtoMriY46ee6vW8.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                
+
+                <div class="col-lg-5 col-sm-6">
+                    <!-- <hr class="section-heading-spacer">
+                    <div class="clearfix"></div> -->
+                    <h2 class="section-heading">5. Curate ideas and nice things with #iList 📖</h2>
+                    <p class="lead">Simply comment/tweet anywhere on the web with hashtag <kbd>#iList</kbd> to activate the <strong>iList PinBoard</strong> on your <code>0nline</code> profile <small>(Social account connection required)</small></p>
+                    <p><small>*coming soon*</small></p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/demo/4.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <!-- <hr class="section-heading-spacer">
+                    <div class="clearfix"></div> -->
+                    <h2 class="section-heading">6. Beautiful Web Page 🌟👌</h2>
+                    <p class="lead">Beautiful page templates, formatted for every device, so you always look great 😊</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/mockup.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+
+    <div class="content-section-b">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2> You too can create your own <code>0nline</code> profile page </h2><br>
+                    <p>within minutes, by chatting with <a href="https://m.me/0nlinebot" target='_blank'><kbd>0nline<kbd/> bot </a> </p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive" src="img/demo/5_bot.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+    </div>
+
+
+	<a  name="free"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Book your <code>0nline</code> username today !!</h2>
+                    <br>
+                    <h3>FREE !! No credit card required</h3>
+                    <br>
+                    <h4>👉🏻   <a href="https://m.me/0nlinebot" target='_blank'> <code>www.0nl.in/e/YOU</code> </a>👈🏻</h4>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://m.me/0nlinebot" target='_blank' class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Message Me</span></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- MODALS DATA -->
+
+    <div class="modal fade team" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                    <h1 class='center'><kbd>0nline</kbd> Team</h2>
+                        <img class='center' width='300px' src='http://i.giphy.com/9XOKADgcuaady.gif'>
+                    <br><br>
+                    <p>
+                        <a href="http://0nl.in/e/sauravtom" target='_blank'><strong>Saurav Tomar</strong></a> : 2x entrepreneur, Product guy and hacker. Overviews tech and handles operations @<a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/sauravtom' target='_blank'>0nl.in/e/sauravtom</a>
+                    </p>
+                    <br>
+                    <p>
+                        <a href="http://http://0nl.in/e/abshk"><strong>Abhishek Sukumar</strong></a> : Marketing and content writing @ <a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/abshk' target='_blank'>0nl.in/e/abshk</a>
+                    </p>
+                    <br>
+                    <p>
+                        <a href="http://http://0nl.in/e/mayank26saxena"><strong>Mayank Saxena</strong></a> : Serial bot maker, passionate about conversational UI & open source| Chief Bot Officer @ <a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/mayank26saxena' target='_blank'>0nl.in/e/mayank26saxena</a>
+                    </p>
+                    <br>
+                    <p>
+                        <a href="http://http://0nl.in/e/mayank26saxena"><strong>Satwik Kansal</strong></a> : Pythonista and passionate about Artificial Intelligence and making personality based chatbots| Chief AI Engineer @ <a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/satwik' target='_blank'>0nl.in/e/satwik</a>
+                    </p>
+                    <br>
+                    <p>
+                        <a href="http://http://0nl.in/e/mayank26saxena"><strong>Gautam Prajapati</strong></a> : is responsible for Building and scaling APIs and making sure that <a href='http://0nl.in' target='_blank'><code>0nline</code></a> is always ... online. <small>Also the only person to have a single character username on <code>0nline</code>😎</small> | Backend Engineer Engineer @ <a href='http://0nl.in' target='_blank'><code>0nline</code></a> | <a href='http://0nl.in/e/g' target='_blank'>0nl.in/e/g</a>
+                    </p>
+                    <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade privacy-policy" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                    <h1>PRIVACY POLICY STATEMENT</h2>
+                    <p><br><br>
+
+                        <strong>SECTION 1 - WHAT DO WE DO WITH YOUR INFORMATION?</strong><br><br>
+
+                        When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.<br>
+
+                        When you browse our store, we also automatically receive your computer’s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.<br>
+
+                        Email marketing (if applicable): With your permission, we may send you emails about our store, new products and other updates.<br><br>
+
+
+                        <strong>SECTION 2 - CONSENT</strong><br><br>
+
+                        How do you get my consent?<br>
+
+                        When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.<br>
+
+                        If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.<br>
+
+
+                        How do I withdraw my consent?<br>
+
+                        If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at stomatrix@gmail.com or mailing us at: 0nline I-2/8, Rohini Sector 16, New Delhi, India 110085, New Delhi, DL, 110085, India<br>
+
+
+                        <strong>SECTION 3 - DISCLOSURE</strong><br><br><br>
+
+                        We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.<br>
+
+
+                        <strong>Payment:</strong><br><br>
+
+                        If you choose a direct payment gateway to complete your purchase, then Shopify stores your credit card data. It is encrypted through the Payment Card Industry Data Security Standard (PCI-DSS). Your purchase transaction data is stored only as long as is necessary to complete your purchase transaction. After that is complete, your purchase transaction information is deleted.<br>
+
+                        All direct payment gateways adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover.<br>
+
+                        PCI-DSS requirements help ensure the secure handling of credit card information by our store and its service providers.<br>
+
+                        For more insight, you may also want to read Shopify’s Terms of Service here or Privacy Statement here.<br><br>
+
+
+                        <strong>SECTION 5 - THIRD-PARTY SERVICES</strong><br><br>
+
+
+                        In general, the third-party providers used by us will only collect, use and disclose your information to the extent necessary to allow them to perform the services they provide to us.<br><br>
+
+                        However, certain third-party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies in respect to the information we are required to provide to them for your purchase-related transactions.<br>
+
+                        For these providers, we recommend that you read their privacy policies so you can understand the manner in which your personal information will be handled by these providers.<br>
+
+                        In particular, remember that certain providers may be located in or have facilities that are located in a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.<br><br>
+
+                        As an example, if you are located in Canada and your transaction is processed by a payment gateway located in the United States, then your personal information used in completing that transaction may be subject to disclosure under United States legislation, including the Patriot Act.<br>
+
+                        Once you leave our store’s website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our website’s Terms of Service.<br><br>
+
+
+                        Links<br>
+
+                        When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.<br>
+
+
+                        <strong>SECTION 6 - SECURITY</strong><br><br>
+
+                        To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.<br>
+
+                        If you provide us with your credit card information, the information is encrypted using secure socket layer technology (SSL) and stored with a AES-256 encryption.  Although no method of transmission over the Internet or electronic storage is 100% secure, we follow all PCI-DSS requirements and implement additional generally accepted industry standards.<br>
+
+
+                        <strong>COOKIES</strong><br><br>
+
+                        Here is a list of cookies that we use. We’ve listed them here so you can choose if you want to opt-out of cookies or not.<br>
+
+                        _session_id, unique token, sessional, Allows Shopify to store information about your session (referrer, landing page, etc).<br><br>
+
+                        _shopify_visit, no data held, Persistent for 30 minutes from the last visit, Used by our website provider’s internal stats tracker to record the number of visits<br>
+
+                        _shopify_uniq, no data held, expires midnight (relative to the visitor) of the next day, Counts the number of visits to a store by a single customer.<br>
+
+                        cart, unique token, persistent for 2 weeks, Stores information about the contents of your cart.<br>
+
+                        _secure_session_id, unique token, sessional<br>
+
+                        storefront_digest, unique token, indefinite If the shop has a password, this is used to determine if the current visitor has access.<br>
+
+
+
+                        <strong>SECTION 7 - AGE OF CONSENT</strong><br><br>
+
+                        By using this site, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.<br><br>
+
+
+                        <strong>SECTION 8 - CHANGES TO THIS PRIVACY POLICY</strong><br><br>
+
+                        We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.<br>
+
+                        If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.<br>
+
+
+                        <strong>QUESTIONS AND CONTACT INFORMATION</strong><br>
+
+                        If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at stomatrix@gmail.com or by mail at 0nline<br>
+
+                        [Re: Privacy Compliance Officer]<br>
+
+                        [I-2/8, Rohini Sector 16, New Delhi, India 110085, New Delhi, DL, 110085, India]<br>
+
+                        ----
+
+                    </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade terms-of-use" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                    <h1>Terms and Conditions ("Terms")</h1>
+                    <p>Last updated: August 01, 2016</p>
+                    <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the http://0nl.in website (the "Service") operated by 0nline ("us", "we", or "our").</p>
+                    <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
+                    <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
+                    <p><strong>Accounts</strong></p>
+                    <p>When you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.</p>
+                    <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service.</p>
+                    <p>You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
+                    <p><strong>Links To Other Web Sites</strong></p>
+                    <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by 0nline.</p>
+                    <p>0nline has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that 0nline shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
+                    <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.</p>
+                    <p><strong>Termination</strong></p>
+                    <p>We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+                    <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
+                    <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+                    <p>Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.</p>
+                    <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
+                    <p><strong>Governing Law</strong></p>
+                    <p>These Terms shall be governed and construed in accordance with the laws of Delhi, India, without regard to its conflict of law provisions.</p>
+                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.</p>
+                    <p><strong>Changes</strong></p>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                    <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+                    <p><strong>Contact Us</strong></p>
+                    <p>If you have any questions about these Terms, please contact us.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade faq" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                    <h1>Frequently Asked Questions</h1>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <!-- <li>
+                            <a href="/blog">Blog</a>
+                        </li> -->
+                        <li>
+                            <a data-toggle="modal" data-target=".team"> 🌟 Team 🌟</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a data-toggle="modal" data-target=".privacy-policy">Privacy Policy</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a data-toggle="modal" data-target=".terms-of-use">Terms of Use</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <!-- <li>
+                            <a data-toggle="modal" data-target=".faq">FAQs</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li> -->
+                        <li>
+                            <a href="mailto:stomatrix@gmail.com?Subject=Hi Saurav">Contact</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; 0nline 2016. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+        
+        <style>
+            #fb_widget .label{position:relative;float:left;color:#005f46;min-width:20%}
+            #fb_widget .field{position:relative;float:left}
+            #fb_widget .element{border:0 dotted red;margin:12px;padding:5px;min-height:25px;clear:both}
+            #fb_widget .field input{margin:0;padding:0}
+            #fb_link.disabled{opacity:0;visibility:hidden;}#fb_link.disabled .tooltiptext{font-size:0}
+            #fb_link.disabled .tooltiptext:after{content:"OFFLINE";font-size:12px}
+            #fb_link.email_us .tooltiptext{font-size:0}
+            #img_email{display:none;}
+            #fb_link.email_us .tooltiptext:after{content:"EMAIL US";font-size:12px}
+            .fbmessenger{position:fixed;bottom:15px;right:15px;z-index:999999999}
+            .fbmessenger span{z-index:999999999;position: absolute;}
+            .fbmessenger.wpostop_left{left:2px;right:initial;top:0;bottom:initial}
+            .tooltiptext.wpostop_left{left:60px;right:initial;top:8px;bottom:initial}
+            .fbmessenger.wpostop_right{left:initial;right:15px;top:0;bottom:initial}
+            .tooltiptext.wpostop_right{left:initial;right:60px;top:8px;bottom:initial}
+            .fbmessenger.wposbottom_left{left:2px;right:initial;top:initial;bottom:0}
+            .tooltiptext.wposbottom_left{left:60px;right:initial;top:initial;bottom:10px}
+            .fbmessenger.wposbottom_right{left:initial;right:15px;top:initial;bottom:0}
+            .tooltiptext.wposbottom_right{left:initial;right:60px;top:initial;bottom:10px}
+            .fbmessenger img{width:50px;filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3));-webkit-filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3))}
+            .tooltiptext{width:120px;background-color:#fff;color:#2c2c2c;text-align:center;padding:5px 0;border:1px solid #eee;border-radius:6px;position:fixed;bottom:30px;right:75px;font-family:inherit;font-size:inherit;text-transform:uppercase;filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3));-webkit-filter:drop-shadow(2px 6px 4px rgba(0,0,0,.3))}
+        </style>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript">
+                    $.noConflict();
+                var ot = Array();
+                ot['mon']='12:00 AM-11:59 PM';
+                ot['tue']='12:00 AM-11:59 PM';
+                ot['wed']='12:00 AM-11:59 PM';
+                ot['thu']='12:00 AM-11:59 PM';
+                ot['fri']='12:00 AM-11:59 PM';
+                ot['sat']='12:00 AM-11:59 PM';
+                ot['sun']='12:00 AM-11:59 PM';
+                var tz = '+05:30,0';
+                var widget_position = 'bottom_left';
+                var fb = '0nlinebot';
+                var fb_email = '';
+                var emailLink = false;
+                var mon = true;
+                var tue = true;
+                var wed = true;
+                var thu = true;
+                var fri = true;
+                var sat = true;
+                var sun = true;
+                function calculate_time_zone(ch){
+                      if (typeof ch == "undefined") ch = false;
+                      var rightNow = new Date();
+                      var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);  /* jan 1st */
+                      var june1 = new Date(rightNow.getFullYear(), 6, 1, 0, 0, 0, 0); /* june 1st */
+                      var temp = jan1.toGMTString();
+                      var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
+                      temp = june1.toGMTString();
+                      var june2 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
+                      var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
+                      var daylight_time_offset = (june1 - june2) / (1000 * 60 * 60);
+                      var dst;
+                      if (std_time_offset == daylight_time_offset) {
+                         dst = "0"; /* daylight savings time is NOT observed */
+                      } else {
+                         /* positive is southern, negative is northern hemisphere */
+                         var hemisphere = std_time_offset - daylight_time_offset;
+                         if (hemisphere >= 0)
+                            std_time_offset = daylight_time_offset;
+                         dst = "1"; /* daylight savings time is observed */
+                      }
+                      var i;
+                      /* check just to avoid error messages */
+                      var con = convert(std_time_offset)+","+dst;
+                      if (ch && document.getElementById('timezone')) {
+                         for (i = 0; i < document.getElementById('timezone').options.length; i++) {
+                            if (document.getElementById('timezone').options[i].value == con) {
+                               document.getElementById('timezone').selectedIndex = i;
+                               break;
+                            }
+                         }
+                      }
+                      return con;}
+                function linkHandler(e){
+                    var is_online = validate();
+                    if (is_online){
+                        e.preventDefault();
+                        var screenwidth = screen.width-500;
+                        window.open(jQuery(this).attr('href'), '_blank',"width=500,height=800,left="+screenwidth);
+                    }else{
+                      if (jQuery("#chk_showemaillink").is(':checked') && jQuery("#fb_email").length > 0){
+                        var fb_email = jQuery("#fb_email").val();
+
+                        if (fb_email!="" && isEmail(fb_email) && jQuery("#fb_link").hasClass("email_us")){
+                            jQuery(this).attr('href',"mailto:"+fb_email);
+                            jQuery(this).attr('target','_self');
+                        }else{
+                            e.preventDefault();
+                            var screenwidth = screen.width-500;
+                            window.open(jQuery(this).attr('href'), '_blank',"width=500,height=800,left="+screenwidth);
+                        }
+                      }else if (emailLink) {
+                            console.log(this);
+                      }else if ( jQuery(this).hasClass("disabled")) {
+                            e.preventDefault();
+                      }
+                    }}
+                function convert(value){
+                    var hours = parseInt(value);
+                    value -= parseInt(value);
+                    value *= 60;
+                    var mins = parseInt(value);
+                    value -= parseInt(value);
+                    value *= 60;
+                    var secs = parseInt(value);
+                    var display_hours = hours;
+                    /* handle GMT case (00:00) */
+                    if (hours == 0) {
+                        display_hours = "00";
+                    } else if (hours > 0) {
+                        /* add a plus sign and perhaps an extra 0 */
+                        display_hours = (hours < 10) ? "+0"+hours : "+"+hours;
+                    } else {
+                        /* add an extra 0 if needed */
+                        display_hours = (hours > -10) ? "-0"+Math.abs(hours) : hours;
+                    }
+                    mins = (mins < 10) ? "0"+mins : mins;
+                    return display_hours+":"+mins;}
+                function validate(){
+                    /*console.clear();*/
+                    if (jQuery("#fb_url").length >0 ){
+                      fb = jQuery("#fb_url").val();
+                    }
+                    if (fb==""){
+                      sweetAlert("Oops...", "Something went wrong!", "error");
+                        return false;
+                    }
+                    if (jQuery("#chk_mon").length > 0 ){
+                      mon = jQuery("#chk_mon").is(":checked");
+                      tue = jQuery("#chk_tue").is(":checked");
+                      wed = jQuery("#chk_wed").is(":checked");
+                      thu = jQuery("#chk_thu").is(":checked");
+                      fri = jQuery("#chk_fri").is(":checked");
+                      sat = jQuery("#chk_sat").is(":checked");
+                      sun = jQuery("#chk_sun").is(":checked");
+                    }
+                   var cDate = new Date();
+
+                   var days = Array();
+
+                   days['mon'] = mon;
+                   days['tue'] = tue;
+                   days['wed'] = wed;
+                   days['thu'] = thu;
+                   days['fri'] = fri;
+                   days['sat'] = sat;
+                   days['sun'] = sun;
+                   var daysName = [];
+                   daysName[1] = "mon";
+                   daysName[2] = "tue";
+                   daysName[3] = "wed";
+                   daysName[4] = "thu";
+                   daysName[5] = "fri";
+                   daysName[6] = "sat";
+                   daysName[7] = "sun";
+                   if (jQuery("#timezone").length>0){
+                      tz = jQuery("#timezone").val();
+                   }
+                   if (jQuery("#widget_position").length>0){
+                      widget_position = jQuery("#widget_position").val();
+                   }
+                   jQuery(".fbmessenger").removeClass().addClass("fbmessenger wpos"+widget_position);
+                   jQuery(".tooltiptext").removeClass().addClass("tooltiptext wpos"+widget_position);
+                   jQuery("#fb_link").attr("href", "http://m.me/"+fb);
+                   var cDayofWeek = daysName[cDate.getDay()];
+                   jQuery("#fb_link").removeClass("disabled");
+                   var calculated_time_zone = calculate_time_zone();
+                   var baseTzSy = tz.substr(0,1);
+                   var baseTzHr = tz.slice(0, tz.indexOf(":"));
+                   var baseTzMn = tz.substr(tz.indexOf(":")+1,2);
+                   var baseTzDs = tz.slice(-1);
+                   var clientTzDs = calculated_time_zone.slice(-1);
+                   if (baseTzSy=="0") baseTzSy="";
+                   if (baseTzSy=="+") baseTzHr = baseTzHr.substr(1);
+                   var conTz = parseInt(baseTzHr) + parseFloat(baseTzMn/60);
+                   var baseTime = calcTime(conTz, conTz);
+                   var baseDayofWeek = baseTime.getDay();
+
+
+                   if (days[daysName[baseDayofWeek]]){
+                      /*Online on Base Day. Check for online time under base timezone*/
+                      if (jQuery('.slider-time:visible').length>0) {
+                         /*Desktop Mode*/
+                         s = jQuery("#ts_container-"+daysName[baseDayofWeek]+" .slider-time").html();
+                         e = jQuery("#ts_container-"+daysName[baseDayofWeek]+" .slider-time2").html();
+                         var start_time = convertTimeFormat(s);
+                         var end_time = convertTimeFormat(e);
+                      }else if (jQuery('#mob_container_time').length>0) {
+                         /*Mobile Mode*/
+                         s = jQuery("#start_time-"+daysName[baseDayofWeek]).val();
+                         e = jQuery("#end_time-"+daysName[baseDayofWeek]).val();
+                         var start_time = convertTimeFormat(s);
+                         var end_time = convertTimeFormat(e);
+                      }else{
+                         /*if validate() was called within widget code*/
+                         var t = ot[daysName[baseDayofWeek]].split("-");
+                         var start_time = convertTimeFormat(t[0]);
+                         var end_time = convertTimeFormat(t[1]);
+                      }
+                      /* Convert the time in HH:MM Format*/
+
+                      /*console.log("Current Time on local Machine: " + cDate.getTime()/1000);
+                      console.log("The local time in selected timezone is " + localTime.getTime());*/
+                      /*Time on Client Machine*/
+                      cHrs = cDate.getHours();
+                      cMin = cDate.getMinutes();
+
+                      /* Convert the time in HH:MM Format*/
+
+                      var osTimeHrs= start_time.slice(0, start_time.indexOf(":"));
+                      var osTimeMins= start_time.substr(start_time.indexOf(":")+1, 2 );
+
+                      var oeTimeHrs= end_time.slice(0, end_time.indexOf(":"));
+                      var oeTimeMins= end_time.substr(end_time.indexOf(":")+1, 2 );
+
+                      console.log("Online time in base timezone("+daysName[baseDayofWeek]+"): " + osTimeHrs+":"+osTimeMins+" - " + oeTimeHrs+":"+oeTimeMins);
+
+                      lHrs = baseTime.getHours();
+                      lMin = baseTime.getMinutes();
+                      var startTimeTs = new Date(baseTime.getFullYear(), baseTime.getMonth(), baseTime.getDate(), osTimeHrs, osTimeMins, 0, 0);
+                      startTimeTs = parseInt( (startTimeTs.getTime() )/1000);                       
+                      var endTimeTs = new Date(baseTime.getFullYear(), baseTime.getMonth(), baseTime.getDate(), oeTimeHrs, oeTimeMins, 0, 0);
+                      endTimeTs = parseInt( (endTimeTs.getTime() )/1000);              
+
+                      sT = new Date(startTimeTs * 1000);
+                      eT = new Date(endTimeTs * 1000);
+                      /*console.log("Curr Hrs: " +cHrs+" Local Hrs:"+lHrs+ " Start Time: "+startTimeTs + " : "+sT);
+                      console.log("Curr Mins: "+cMin+" Local Mins:"+lMin+ " End Time: "+endTimeTs +" : "+eT);*/
+
+                      var cTs = parseInt(baseTime.getTime()/1000);
+                      
+                      if ( (cTs >= startTimeTs) && (cTs < endTimeTs) ){
+                         /*console.log("ONLINE");*/
+                         jQuery("#fb_link").removeClass("disabled").removeClass("email_us");
+                         jQuery("#img_email").hide();
+                         jQuery("#img_msg").show();
+                         return true;
+                      }else{
+                         /*console.log("OFFLINE");*/
+
+                        if (jQuery("#chk_showemaillink").length > 0){
+                            emailLink = jQuery("#chk_showemaillink").is(':checked');
+                            fb_email = jQuery("#fb_email").val();
+                        }else{
+                            emailLink = emailLink;
+                        }
+                        if (emailLink){
+                            jQuery('#fb_link').attr('href',"mailto:"+fb_email);
+                            jQuery('#fb_link').attr('target','_self');
+                            if (fb_email!="" && isEmail(fb_email) ){ 
+                               jQuery("#fb_link").removeClass("disabled").addClass("email_us");
+                               jQuery("#img_email").show();
+                               jQuery("#img_msg").hide(); 
+                            }else{
+                               jQuery("#img_email").hide();
+                               jQuery("#img_msg").show();
+                            }
+                         }else{
+                             jQuery("#fb_link").addClass("disabled");
+                         }
+                         
+                      }
+                   }else{
+                       /*console.log("OFFLINE");*/
+                       if (jQuery("#chk_showemaillink").length > 0){
+                         emailLink = jQuery("#chk_showemaillink").is(':checked');
+                         fb_email = jQuery("#fb_email").val();
+                       }else{
+                         emailLink = emailLink;
+                       }
+                      if (emailLink){
+                        jQuery('#fb_link').attr('href',"mailto:"+fb_email);
+                        jQuery('#fb_link').attr('target','_self');
+                         if (fb_email!="" && isEmail(fb_email) ){
+                            jQuery("#fb_link").removeClass("disabled").addClass("email_us");
+                            jQuery("#img_email").show();
+                            jQuery("#img_msg").hide();
+                         }else{
+                            jQuery("#img_email").hide();
+                            jQuery("#img_msg").show();
+                         }
+                      }else{
+                            jQuery("#fb_link").addClass("disabled");
+                      }
+                      
+                   }
+                   /*console.log("Current time in base timezone is: "+ (baseTime.toLocaleString()));*/
+                   return false;}
+                function convertTimeFormat(time){
+                  /*Convert the time into HH:MM format*/
+                  var hours = Number(time.match(/^(\d+)/)[1]);
+                  var minutes = Number(time.match(/:(\d+)/)[1]);
+                  var AMPM = time.match(/\s(.*)$/)[1];
+                  if(AMPM == "PM" && hours<12) hours = hours+12;
+                  if(AMPM == "AM" && hours==12) hours = hours-12;
+                  var sHours = hours.toString();
+                  var sMinutes = minutes.toString();
+                  if(hours<10) sHours = "0" + sHours;
+                  if(minutes<10) sMinutes = "0" + sMinutes;
+                  return sHours+":"+sMinutes;}
+                function calcTime(city, offset){
+                    /* create Date object for current location */
+                    d = new Date();
+                    /* convert to msec
+                       add local time zone offset 
+                       get UTC time in msec */
+                    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                    /* create new Date object for different city
+                       using supplied offset */
+                    nd = new Date(utc + (3600000*offset));
+                    return nd; /* return time as a string */}
+                function isEmail(email){
+                  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                  return regex.test(email);}
+
+                jQuery( document ).ready(function($) {
+                    calculate_time_zone(true);
+                    validate();
+                    setInterval(validate, 30000);
+                    $('#fb_link').click(linkHandler);
+                });
+        </script>
+
+        <div class='code'>
+          <a id="fb_link" href="http://m.me/0nlinebot" target="_blank" class="" style="display: inline;">
+              <div class="fbmessenger wposbottom_left"><img id="img_msg" src="https://supple.com.au/wp-content/themes/supple/img/msg.png"><img id="img_email" src="https://supple.com.au/wp-content/themes/supple/img/emailc.png" style="display: none;">
+                 
+          <span class="tooltiptext wposbottom_left">Get <kbd>0nline</kbd> today</span>
+          </div>
+          </a>
+         </div>
+        <!--Facebook Chat Widget - Made by Supple Solutions - https://supple.com.au/tools/facebook-messenger-website-chat-widget/ -->
+
+    
+
+</body>
+
+</html>
